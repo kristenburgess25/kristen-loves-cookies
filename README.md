@@ -1,4 +1,4 @@
-# Baking Blog Project - README
+# Kristen Loves Cookies - Full Stack Baking Blog Project - README 
 
 ## Project Overview
 This project is a **full-stack baking blog** showcasing both my **personal passion for baking** and my **full stack development skills**. It features a **FastAPI backend with PostgreSQL** and a **Next.js frontend** styled with **TailwindCSS**. The backend is deployed using **Google Cloud Run**, and the database is hosted on **Google Cloud SQL**.
