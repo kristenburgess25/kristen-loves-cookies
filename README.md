@@ -117,31 +117,6 @@ python import_recipes.py
 
 ---
 
-## Git & GitHub Workflow
-
-### Initializing Git
-```sh
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-### Connecting to Remote Repository
-```sh
-git remote add origin git@github.com:kristenburgess25/kristen-loves-cookies.git
-git branch -M main
-git push -u origin main
-```
-
-### Common Git Commands
-- **Check Status:** `git status`
-- **Add Changes:** `git add .`
-- **Commit Changes:** `git commit -m "message"`
-- **Push to GitHub:** `git push origin main`
-- **Pull Latest Changes:** `git pull origin main`
-
----
-
 ## Future Enhancements
 - **Frontend Development (Next.js) 📌**
 - **API Authentication & User Roles**
