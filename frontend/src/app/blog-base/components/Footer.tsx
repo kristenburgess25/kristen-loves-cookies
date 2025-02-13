@@ -18,9 +18,9 @@ function Copyright() {
   return (
     <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
       {'Copyright © '}
-      <Link color="text.secondary" href="https://mui.com/">
-        Sitemark
-      </Link>
+      {/*<Link color="text.secondary" href="https://mui.com/">*/}
+      {/*  Sitemark*/}
+      {/*</Link>*/}
       &nbsp;
       {new Date().getFullYear()}
     </Typography>
@@ -58,7 +58,7 @@ export default function Footer() {
             }}
           >
             <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-              <SitemarkIcon />
+              {/*<SitemarkIcon />*/}
               <Typography
                 variant="body2"
                 gutterBottom
