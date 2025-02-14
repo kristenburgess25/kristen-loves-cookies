@@ -1,10 +1,54 @@
-// "use client"
+const API_URL = process.env.NEXT_PUBLIC_API_URL + "/recipes";
 
-import Image from "next/image";
-import Blog from "./blog-base/Blog"
+async function getRecipes() {
+  const res = await fetch(API_URL, { cache: "no-store" }); // Prevents caching in dev
+  if (!res.ok) throw new Error("Failed to fetch recipes");
+  return res.json();
+}
 
-export default function Home() {
+export default async function Home() {
+  const recipes = await getRecipes();
+
   return (
-      <Blog />
+    <div>
+      <h1 className="text-2xl font-bold">Latest Recipes</h1>
+      <ul>
+        {recipes.map((recipe: any) => (
+          <li key={recipe.id} className="border p-4 my-2 rounded-lg">
+            <h2 className="text-xl font-semibold">{recipe.title}</h2>
+            <p>{recipe.subtitle}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
+
+
+// "use client"
+//
+// import { useEffect, useState } from "react";
+// import Blog from "./blog-base/Blog";
+//
+// const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/recipes";
+//
+// export default function Home() {
+//   const [recipes, setRecipes] = useState([]);
+//
+//   useEffect(() => {
+//     const fetchRecipes = async () => {
+//       try {
+//         const response = await fetch(API_URL);
+//         if (!response.ok) throw new Error("Failed to fetch recipes");
+//         const data = await response.json();
+//         setRecipes(data);
+//       } catch (error) {
+//         console.error("Error fetching recipes:", error);
+//       }
+//     };
+//
+//     fetchRecipes();
+//   }, []);
+//
+//   return <Blog recipes={recipes} />;
+// }
