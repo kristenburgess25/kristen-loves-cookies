@@ -22,7 +22,7 @@ This project is a **full-stack baking blog** showcasing both my **personal passi
    ```
    OR manually start it:
    ```sh
-   pg_ctl -D /opt/homebrew/var/postgresql@15 start
+   pg_ctl -D /opt/homebrew/var/postgresql15 start
    ```
    
 2. **Activate Virtual Environment**

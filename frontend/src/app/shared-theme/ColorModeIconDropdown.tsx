@@ -112,10 +112,25 @@ export default function ColorModeIconDropdown() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleMode = (targetMode: 'system' | 'light' | 'dark' | 'disco') => () => {
-    setMode(setMode(targetMode as 'light' | 'dark' | 'system'););
-    handleClose();
-  };
+const handleMode = (targetMode: 'system' | 'light' | 'dark' | 'disco') => () => {
+  console.log(`Switching mode to: ${targetMode}`);
+
+  localStorage.setItem('mui-mode', targetMode); // Persist selection
+  setMode(targetMode); // Update the MUI theme
+
+  // Apply/remove disco mode styles instantly
+  if (targetMode === 'disco') {
+    document.body.classList.add('sparkles'); // Add disco effect
+    document.documentElement.setAttribute('data-mui-color-scheme', 'dark'); // Keep UI text readable
+  } else {
+    document.body.classList.remove('sparkles'); // Remove disco effect
+    document.documentElement.setAttribute('data-mui-color-scheme', targetMode);
+  }
+
+  handleClose();
+};
+
+
 
   if (!mode) {
     return (

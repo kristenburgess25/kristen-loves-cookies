@@ -51,10 +51,9 @@
 //     </ThemeProvider>
 //   );
 // }
-
 import * as React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import type { ThemeOptions } from '@mui/material/styles';
+import type { ThemeOptions, PaletteMode } from '@mui/material/styles';
 import { useColorScheme } from '@mui/material/styles';
 import { inputsCustomizations } from './customizations/inputs';
 import { dataDisplayCustomizations } from './customizations/dataDisplay';
@@ -68,13 +67,41 @@ interface AppThemeProps {
   themeComponents?: ThemeOptions['components'];
 }
 
+// Extend the PaletteMode type to allow 'disco'
+type ExtendedPaletteMode = PaletteMode | 'disco';
+
 export default function AppTheme(props: AppThemeProps) {
   const { children, disableCustomTheme, themeComponents } = props;
-  const { mode } = useColorScheme(); // Get current mode (light, dark, disco)
+  const muiColorScheme = useColorScheme();
+  const [currentMode, setCurrentMode] = React.useState<'light' | 'dark' | 'disco'>('light');
+
+  React.useEffect(() => {
+  const storedMode = localStorage.getItem('mui-mode') as 'light' | 'dark' | 'disco' | null;
+  if (storedMode) {
+    setCurrentMode(storedMode);
+  }
+}, []);
+
+React.useEffect(() => {
+  // When disco mode is active
+  if (currentMode === 'disco') {
+    document.body.classList.add('sparkles');
+    document.body.style.backgroundColor = '#800080'; // Purple BG
+  } else {
+    // Remove disco styles when switching modes
+    document.body.classList.remove('sparkles');
+    document.body.style.removeProperty('background-color'); // Reset BG
+  }
+}, [currentMode]); // Runs every time `currentMode` updates
+
+
+  const isDisco = currentMode === 'disco';
+
+  console.log("Stored Mode:", localStorage.getItem('mui-mode'));
+  console.log("Current Mode State:", currentMode);
+  console.log("Is Disco Mode:", isDisco);
 
   const theme = React.useMemo(() => {
-    const isDisco = mode === 'disco';
-
     return disableCustomTheme
       ? {}
       : createTheme({
@@ -87,33 +114,24 @@ export default function AppTheme(props: AppThemeProps) {
           shadows,
           shape,
           palette: {
-            mode: isDisco ? 'dark' : mode, // Keep dark mode for text
-            ...(isDisco
-              ? {
-                  background: { default: '#800080' }, // Disco Purple Background
-                  text: { primary: '#ffffff' }, // White Text
-                }
-              : {}),
-          },
-          components: {
-            ...inputsCustomizations,
-            ...dataDisplayCustomizations,
-            ...feedbackCustomizations,
-            ...navigationCustomizations,
-            ...themeComponents,
+            mode: isDisco ? 'dark' : currentMode,
+            background: {
+              default: isDisco ? '#800080' : currentMode === 'dark' ? 'hsl(220, 35%, 3%)' : 'hsl(0, 0%, 99%)',
+              paper: isDisco ? '#800080' : currentMode === 'dark' ? 'hsl(220, 30%, 7%)' : 'hsl(220, 35%, 97%)',
+            },
+            text: {
+              primary: isDisco ? '#ffffff' : currentMode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(220, 30%, 6%)',
+            },
           },
         });
-  }, [disableCustomTheme, themeComponents, mode]);
-
-  if (disableCustomTheme) {
-    return <React.Fragment>{children}</React.Fragment>;
-  }
+  }, [disableCustomTheme, themeComponents, currentMode]);
 
   return (
     <ThemeProvider theme={theme} disableTransitionOnChange>
+      {isDisco && <div className="sparkles" />}
       {children}
-      {/* Disco Effect Overlay */}
-      {mode === 'disco' && <div className="sparkles" />}
     </ThemeProvider>
   );
 }
+
+
