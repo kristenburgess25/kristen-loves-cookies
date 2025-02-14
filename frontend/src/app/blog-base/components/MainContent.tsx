@@ -576,9 +576,9 @@ const MainContent: React.FC<MainContentProps> = ({ recipes }) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
       <Typography variant="h1" gutterBottom>
-        Blog
+        Kristen Loves Cookies
       </Typography>
-      <Typography>Stay in the loop with the latest about our products</Typography>
+      <Typography>... and every other baked good that involves copious amounts of butter. </Typography>
       <Grid container spacing={2} columns={12}>
         {recipes.map((recipe) => (
           <Grid item xs={12} md={6} key={recipe.id}>
