@@ -9,9 +9,11 @@ import MainContent from './components/MainContent';
 import Latest from './components/Latest';
 import Footer from './components/Footer';
 
-export default function Blog(props: { disableCustomTheme?: boolean }) {
+export default function Blog(props: BlogParams) {
+  const { disableCustomTheme, recipes } = props;
+
   return (
-    <AppTheme {...props}>
+    <AppTheme disableCustomTheme={disableCustomTheme}>
       <CssBaseline enableColorScheme />
 
       <AppAppBar />
@@ -20,7 +22,7 @@ export default function Blog(props: { disableCustomTheme?: boolean }) {
         component="main"
         sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}
       >
-        <MainContent />
+        <MainContent recipes={recipes} />
         <Latest />
       </Container>
       <Footer />

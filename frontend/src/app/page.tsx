@@ -1,4 +1,5 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL + "/recipes";
+import Blog from "./blog-base/Blog";
 
 async function getRecipes() {
   const res = await fetch(API_URL, { cache: "no-store" }); // Prevents caching in dev
@@ -11,15 +12,7 @@ export default async function Home() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">Latest Recipes</h1>
-      <ul>
-        {recipes.map((recipe: any) => (
-          <li key={recipe.id} className="border p-4 my-2 rounded-lg">
-            <h2 className="text-xl font-semibold">{recipe.title}</h2>
-            <p>{recipe.subtitle}</p>
-          </li>
-        ))}
-      </ul>
+        <Blog recipes={recipes}/>
     </div>
   );
 }
