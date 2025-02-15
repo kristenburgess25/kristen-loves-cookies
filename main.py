@@ -6,7 +6,17 @@ from database import engine, SessionLocal
 from models import Recipe, Category, Tag
 from sqlalchemy import select
 
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
+
+# ✅ Add CORS Middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 🔥 Allows requests from any origin (for development only)
+    allow_credentials=True,
+    allow_methods=["*"],  # 🔥 Allows all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # 🔥 Allows all headers
+)
 
 # Dependency to get a DB session
 def get_db():
@@ -21,6 +31,15 @@ def get_db():
 def get_recipes(db: Session = Depends(get_db)):
     result = db.execute(select(Recipe)).scalars().all()
     return result
+
+# 📌 API: Get Recipe by ID
+@app.get("/recipes/{recipe_id}")
+def get_recipe_by_id(recipe_id: str, db: Session = Depends(get_db)):
+    recipe = db.execute(select(Recipe).where(Recipe.id == recipe_id)).scalar_one_or_none()
+    if not recipe:
+        return {"error": "Recipe not found"}
+    return recipe
+
 
 # 📌 API: Get Recipes by Category
 @app.get("/recipes/category/{category_name}")
