@@ -42,7 +42,7 @@ export default function AllRecipesPage() {
   }, []);
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 4, px: 2, padding: "3rem 0" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 4, px: 2, padding: "3rem 1rem" }}>
       {loading && <Typography>Loading recipes...</Typography>}
       {error && <Typography color="error">{error}</Typography>}
       <br />

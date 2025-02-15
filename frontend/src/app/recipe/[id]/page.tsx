@@ -57,7 +57,7 @@ React.useEffect(() => {
   if (!recipe) return <Typography>Recipe not found!</Typography>;
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{padding: "5rem 1rem"}}>
       <Box sx={{ textAlign: "center", my: 4 }}>
         <Typography variant="h2">{recipe.title}</Typography>
         <Typography variant="subtitle1" color="text.secondary">
@@ -70,9 +70,12 @@ React.useEffect(() => {
           alt={recipe.title}
           width={800}
           height={450}
-          style={{ borderRadius: "8px" }}
+          style={{ borderRadius: "8px", margin: "auto", height: "20rem", width: "100%", objectFit: "cover" }}
         />
       </Box>
+      <Typography variant="inherit" sx={{ marginBottom: "1rem" }}>
+        {recipe.introduction}
+      </Typography>
       <Typography variant="h4" gutterBottom>
         Ingredients
       </Typography>
@@ -86,7 +89,9 @@ React.useEffect(() => {
       </Typography>
       <ol>
         {recipe.instructions.map((step, index) => (
-          <li key={index}>{step}</li>
+          <li key={index} style={{ margin: '1rem 0'}}>
+            {step}
+          </li>
         ))}
       </ol>
     </Container>
