@@ -23,7 +23,7 @@ export default function Blog(props: BlogParams) {
         sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}
       >
         <MainContent recipes={recipes} />
-        <Latest />
+        {/*<Latest />*/}
       </Container>
       <Footer />
     </AppTheme>

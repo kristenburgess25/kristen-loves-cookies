@@ -1,5 +1,6 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL + "/recipes";
 import Blog from "./blog-base/Blog";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL + "/recipes";
 
 async function getRecipes() {
   const res = await fetch(API_URL, { cache: "no-store" }); // Prevents caching in dev
