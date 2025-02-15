@@ -492,6 +492,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 
@@ -541,30 +542,32 @@ interface RecipeCardProps {
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   return (
-    <StyledCard variant="outlined">
-      <CardMedia
-        component="img"
-        alt={recipe.title}
-        image={`/assets/articles/${recipe.hero_image}` || '/placeholder-image.jpg'} // Placeholder for now
-        sx={{ aspectRatio: '16 / 9', borderBottom: '1px solid', borderColor: 'divider' }}
-      />
-      <StyledCardContent>
-        <Typography gutterBottom variant="caption" component="div">
-          {recipe.category}
-        </Typography>
-        <Typography gutterBottom variant="h6" component="div">
-          {recipe.title}
-        </Typography>
-        <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-          {recipe.subtitle}
-        </StyledTypography>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-          {recipe.tags?.map((tag, index) => (
-            <Chip key={index} label={tag} size="small" />
-))}
-        </Box>
-      </StyledCardContent>
-    </StyledCard>
+    <Link href={`/recipe/${recipe.id}`} passHref>
+      <StyledCard variant="outlined">
+        <CardMedia
+          component="img"
+          alt={recipe.title}
+          image={`/assets/articles/${recipe.hero_image}` || '/placeholder-image.jpg'} // Placeholder for now
+          sx={{ aspectRatio: '16 / 9', borderBottom: '1px solid', borderColor: 'divider' }}
+        />
+        <StyledCardContent>
+          <Typography gutterBottom variant="caption" component="div">
+            {recipe.category}
+          </Typography>
+          <Typography gutterBottom variant="h6" component="div">
+            {recipe.title}
+          </Typography>
+          <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+            {recipe.subtitle}
+          </StyledTypography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+            {recipe.tags?.map((tag, index) => (
+              <Chip key={index} label={tag} size="small" />
+  ))}
+          </Box>
+        </StyledCardContent>
+      </StyledCard>
+    </Link>
   );
 };
 
@@ -576,9 +579,9 @@ const MainContent: React.FC<MainContentProps> = ({ recipes }) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
       <Typography variant="h1" gutterBottom>
-        Blog
+        Kristen Loves Cookies
       </Typography>
-      <Typography>Stay in the loop with the latest about our products</Typography>
+      <Typography>... and all other baked goods made with copious amounts of butter!</Typography>
       <Grid container spacing={2} columns={12}>
         {recipes.map((recipe) => (
           <Grid item xs={12} md={6} key={recipe.id}>
