@@ -4,10 +4,8 @@ import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import AppTheme from '../shared-theme/AppTheme';
-import AppAppBar from './components/AppAppBar';
 import MainContent from './components/MainContent';
 import Latest from './components/Latest';
-import Footer from './components/Footer';
 
 export default function Blog(props: BlogParams) {
   const { disableCustomTheme, recipes } = props;
@@ -16,7 +14,6 @@ export default function Blog(props: BlogParams) {
     <AppTheme disableCustomTheme={disableCustomTheme}>
       <CssBaseline enableColorScheme />
 
-      <AppAppBar />
       <Container
         maxWidth="lg"
         component="main"
@@ -25,7 +22,6 @@ export default function Blog(props: BlogParams) {
         <MainContent recipes={recipes} />
         {/*<Latest />*/}
       </Container>
-      <Footer />
     </AppTheme>
   );
 }

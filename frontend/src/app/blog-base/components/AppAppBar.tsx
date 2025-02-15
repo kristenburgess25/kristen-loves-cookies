@@ -11,6 +11,7 @@ import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
+import Link from "@mui/material/Link"
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ColorModeIconDropdown from "../../shared-theme/ColorModeIconDropdown";
@@ -62,9 +63,16 @@ export default function AppAppBar() {
           <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center", px: 0 }}>
             {/* <Sitemark /> */}
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <Button variant="text" color="info" size="small">
-                All Recipes
-              </Button>
+              <Link href="/" underline="none">
+                <Button variant="text" color="info" size="small">
+                  Home
+                </Button>
+              </Link>
+              <Link href="/allrecipes" underline="none">
+                <Button variant="text" color="info" size="small">
+                  All Recipes
+                </Button>
+              </Link>
               <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                 About
               </Button>
@@ -138,7 +146,12 @@ export default function AppAppBar() {
                     <CloseRoundedIcon />
                   </IconButton>
                 </Box>
-                <MenuItem>All Recipes</MenuItem>
+                <Link href="/" underline="none">
+                  <MenuItem>Home</MenuItem>
+                </Link>
+                <Link href="/allrecipes">
+                  <MenuItem>All Recipes</MenuItem>
+                </Link>
                 <MenuItem>About</MenuItem>
                 <Divider sx={{ my: 3 }} />
               </Box>
