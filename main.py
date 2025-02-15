@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from database import engine, SessionLocal
 from models import Recipe, Category, Tag
 from sqlalchemy import select
+from sqlalchemy.orm import joinedload
 
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
@@ -28,9 +29,18 @@ def get_db():
 
 # 📌 API: Get All Recipes
 @app.get("/recipes")
+# 📌 API: Get All Recipes (Now Includes Category Name)
 def get_recipes(db: Session = Depends(get_db)):
-    result = db.execute(select(Recipe)).scalars().all()
-    return result
+    recipes = db.execute(select(Recipe).options(joinedload(Recipe.category))).scalars().all()
+
+    # Convert SQLAlchemy objects to dictionaries
+    return [
+        {
+            **recipe.__dict__,
+            "category": recipe.category.name if recipe.category else None,  # Resolves category name
+        }
+        for recipe in recipes
+    ]
 
 # 📌 API: Get Recipe by ID
 @app.get("/recipes/{recipe_id}")
