@@ -18,6 +18,8 @@ import ColorModeIconDropdown from "../../shared-theme/ColorModeIconDropdown";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
+import { useRouter, usePathname } from "next/navigation";
+import CloseIcon from '@mui/icons-material/Close';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
@@ -36,6 +38,9 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 }));
 
 export default function AppAppBar() {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [open, setOpen] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState("");
 
@@ -46,6 +51,24 @@ export default function AppAppBar() {
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
   };
+
+const handleSearchSubmit = (event: React.FormEvent) => {
+  event.preventDefault();
+  if (!searchQuery.trim()) return;
+
+  if (pathname === "/allrecipes") {
+    // ✅ Update search query in URL (without refresh)
+    const url = new URL(window.location.href);
+    url.searchParams.set("search", searchQuery);
+    window.history.pushState({}, "", url.toString());
+    window.dispatchEvent(new Event("searchUpdated")); // 🔥 Fire event manually
+  } else {
+    // ✅ Redirect to `/allrecipes` with search query
+    router.push(`/allrecipes?search=${encodeURIComponent(searchQuery)}`);
+    window.dispatchEvent(new Event("searchUpdated")); // 🔥 Ensure it updates immediately
+  }
+};
+
 
   return (
     <AppBar
@@ -81,30 +104,32 @@ export default function AppAppBar() {
 
           {/* Desktop Search Bar */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1, alignItems: "center" }}>
-            <OutlinedInput
-              size="small"
-              placeholder="Search recipes…"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              startAdornment={
-                <InputAdornment position="start">
-                  <SearchIcon fontSize="small" />
-                </InputAdornment>
-              }
-              sx={{
-                width: "200px",
-                backgroundColor: "background.paper",
-                borderRadius: "8px",
-              }}
-            />
-            <ColorModeIconDropdown />
+            <form onSubmit={handleSearchSubmit}>
+              <OutlinedInput
+                size="small"
+                placeholder="Search recipes…"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                startAdornment={
+                  <InputAdornment position="start">
+                    <SearchIcon fontSize="small"/>
+                  </InputAdornment>
+                }
+                sx={{
+                  width: "200px",
+                  backgroundColor: "background.paper",
+                  borderRadius: "8px",
+                }}
+              />
+            </form>
+            <ColorModeIconDropdown/>
           </Box>
 
           {/* Mobile Menu */}
-          <Box sx={{ display: { xs: "flex", md: "none" }, gap: 1 }}>
-            <ColorModeIconDropdown size="medium" />
+          <Box sx={{display: {xs: "flex", md: "none"}, gap: 1}}>
+            <ColorModeIconDropdown size="medium"/>
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
-              <MenuIcon />
+              <MenuIcon/>
             </IconButton>
             <Drawer
               anchor="top"
@@ -116,7 +141,7 @@ export default function AppAppBar() {
                 },
               }}
             >
-              <Box sx={{ p: 2, backgroundColor: "background.default" }}>
+            <Box sx={{ p: 2, backgroundColor: "background.default" }}>
                 <Box
                   sx={{
                     display: "flex",

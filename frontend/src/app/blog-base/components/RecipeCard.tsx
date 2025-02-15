@@ -63,6 +63,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
           sx={{
             width: "100%", // Make sure it doesn't exceed the card width
             height: "auto", // Maintain aspect ratio
+            minHeight: 200,
             maxHeight: 200, // Prevents images from being too large
             borderBottom: "1px solid",
             borderColor: "divider",
