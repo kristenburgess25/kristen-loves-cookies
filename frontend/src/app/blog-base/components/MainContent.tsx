@@ -542,7 +542,7 @@ interface RecipeCardProps {
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   return (
-    <Link href={`/recipe/${recipe.id}`} passHref>
+    <Link href={`/recipe/${recipe.id}`}>
       <StyledCard variant="outlined">
         <CardMedia
           component="img"
