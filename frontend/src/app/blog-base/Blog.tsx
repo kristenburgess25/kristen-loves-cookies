@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import AppTheme from '../shared-theme/AppTheme';
 import MainContent from './components/MainContent';
 import Latest from './components/Latest';
+import HeroSection from "./components/HeroSection";
 
 export default function Blog(props: BlogParams) {
   const { disableCustomTheme, recipes } = props;
@@ -18,17 +19,7 @@ export default function Blog(props: BlogParams) {
         component="main"
         sx={{display: 'flex', flexDirection: 'column', my: 16, gap: 4}}
       >
-        <div id="hero-img">
-          <img
-            src="/assets/recipes/cookie-stock-banner.jpg"
-            alt="Cookie Banner"
-            style={{
-              width: "100%",
-              height: "20rem",
-              objectFit: "cover"
-            }}
-          />
-        </div>
+        <HeroSection />
         <MainContent recipes={recipes}/>
         {/*<Latest />*/}
       </Container>

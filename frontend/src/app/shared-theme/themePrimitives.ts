@@ -238,107 +238,177 @@ export const getDesignTokens = (mode: PaletteMode) => {
   };
 };
 
+// export const colorSchemes = {
+//   light: {
+//     palette: {
+//       primary: {
+//         light: brand[200],
+//         main: brand[400],
+//         dark: brand[700],
+//         contrastText: brand[50],
+//       },
+//       info: {
+//         light: brand[100],
+//         main: brand[300],
+//         dark: brand[600],
+//         contrastText: gray[50],
+//       },
+//       warning: {
+//         light: orange[300],
+//         main: orange[400],
+//         dark: orange[800],
+//       },
+//       error: {
+//         light: red[300],
+//         main: red[400],
+//         dark: red[800],
+//       },
+//       success: {
+//         light: green[300],
+//         main: green[400],
+//         dark: green[800],
+//       },
+//       grey: {
+//         ...gray,
+//       },
+//       divider: alpha(gray[300], 0.4),
+//       background: {
+//         default: 'hsl(0, 0%, 99%)',
+//         paper: 'hsl(220, 35%, 97%)',
+//       },
+//       text: {
+//         primary: gray[800],
+//         secondary: gray[600],
+//         warning: orange[400],
+//       },
+//       action: {
+//         hover: alpha(gray[200], 0.2),
+//         selected: `${alpha(gray[200], 0.3)}`,
+//       },
+//       baseShadow:
+//         'hsla(220, 30%, 5%, 0.07) 0px 4px 16px 0px, hsla(220, 25%, 10%, 0.07) 0px 8px 16px -5px',
+//     },
+//   },
+//   dark: {
+//     palette: {
+//       primary: {
+//         contrastText: brand[50],
+//         light: brand[300],
+//         main: brand[400],
+//         dark: brand[700],
+//       },
+//       info: {
+//         contrastText: brand[300],
+//         light: brand[500],
+//         main: brand[700],
+//         dark: brand[900],
+//       },
+//       warning: {
+//         light: orange[400],
+//         main: orange[500],
+//         dark: orange[700],
+//       },
+//       error: {
+//         light: red[400],
+//         main: red[500],
+//         dark: red[700],
+//       },
+//       success: {
+//         light: green[400],
+//         main: green[500],
+//         dark: green[700],
+//       },
+//       grey: {
+//         ...gray,
+//       },
+//       divider: alpha(gray[700], 0.6),
+//       background: {
+//         default: gray[900],
+//         paper: 'hsl(220, 30%, 7%)',
+//       },
+//       text: {
+//         primary: 'hsl(0, 0%, 100%)',
+//         secondary: gray[400],
+//       },
+//       action: {
+//         hover: alpha(gray[600], 0.2),
+//         selected: alpha(gray[600], 0.3),
+//       },
+//       baseShadow:
+//         'hsla(220, 30%, 5%, 0.7) 0px 4px 16px 0px, hsla(220, 25%, 10%, 0.8) 0px 8px 16px -5px',
+//     },
+//   },
+// };
+
 export const colorSchemes = {
   light: {
     palette: {
       primary: {
-        light: brand[200],
-        main: brand[400],
-        dark: brand[700],
-        contrastText: brand[50],
+        light: "#4788bf", // Lighter Blueberry
+        main: "#3273a8",  // Blueberry
+        dark: "#1f4d73",  // Darker Blueberry
+        contrastText: "#fdeacc", // Buttery text
       },
-      info: {
-        light: brand[100],
-        main: brand[300],
-        dark: brand[600],
-        contrastText: gray[50],
+      secondary: {
+        light: "#bf5f78", // Softer Raspberry
+        main: "#a63458", // Raspberry
+        dark: "#7e2842", // Dark Raspberry
+        contrastText: "#fdeacc",
       },
-      warning: {
-        light: orange[300],
-        main: orange[400],
-        dark: orange[800],
+      accent: {
+        main: "#d0732a", // Caramel Orange
       },
-      error: {
-        light: red[300],
-        main: red[400],
-        dark: red[800],
-      },
-      success: {
-        light: green[300],
-        main: green[400],
-        dark: green[800],
-      },
-      grey: {
-        ...gray,
-      },
-      divider: alpha(gray[300], 0.4),
       background: {
-        default: 'hsl(0, 0%, 99%)',
-        paper: 'hsl(220, 35%, 97%)',
+        default: "#fdeacc", // Buttery Vanilla
+        paper: "#fff8eb", // Slightly lighter for contrast
       },
       text: {
-        primary: gray[800],
-        secondary: gray[600],
-        warning: orange[400],
+        primary: "#1e1013", // Dark Chocolate
+        secondary: "#5a3c44", // Softer cocoa
       },
       action: {
-        hover: alpha(gray[200], 0.2),
-        selected: `${alpha(gray[200], 0.3)}`,
+        hover: "rgba(48, 48, 48, 0.1)", // Subtle hover effect
+        selected: "rgba(48, 48, 48, 0.2)",
       },
       baseShadow:
-        'hsla(220, 30%, 5%, 0.07) 0px 4px 16px 0px, hsla(220, 25%, 10%, 0.07) 0px 8px 16px -5px',
+        "hsla(220, 30%, 5%, 0.07) 0px 4px 16px, hsla(220, 25%, 10%, 0.07) 0px 8px 16px -5px",
     },
   },
   dark: {
     palette: {
       primary: {
-        contrastText: brand[50],
-        light: brand[300],
-        main: brand[400],
-        dark: brand[700],
+        light: "#b0e0ff",
+        main: "#99d1f7", // Bright Sky Blue
+        dark: "#5a9ac6",
+        contrastText: "#1e1013", // Dark Chocolate Text
       },
-      info: {
-        contrastText: brand[300],
-        light: brand[500],
-        main: brand[700],
-        dark: brand[900],
+      secondary: {
+        light: "#e88ea5",
+        main: "#c96a8b", // Rose Pink
+        dark: "#923e5a",
+        contrastText: "#1e1013",
       },
-      warning: {
-        light: orange[400],
-        main: orange[500],
-        dark: orange[700],
+      accent: {
+        main: "#f49546", // Warm Orange Glow
       },
-      error: {
-        light: red[400],
-        main: red[500],
-        dark: red[700],
-      },
-      success: {
-        light: green[400],
-        main: green[500],
-        dark: green[700],
-      },
-      grey: {
-        ...gray,
-      },
-      divider: alpha(gray[700], 0.6),
       background: {
-        default: gray[900],
-        paper: 'hsl(220, 30%, 7%)',
+        default: "#1e1013", // Dark Chocolate
+        paper: "#2a1518", // Slightly lighter
       },
       text: {
-        primary: 'hsl(0, 0%, 100%)',
-        secondary: gray[400],
+        primary: "#fdeacc", // Buttery Vanilla
+        secondary: "#e3c5b5", // Soft Beige
       },
       action: {
-        hover: alpha(gray[600], 0.2),
-        selected: alpha(gray[600], 0.3),
+        hover: "rgba(255, 255, 255, 0.1)",
+        selected: "rgba(255, 255, 255, 0.2)",
       },
       baseShadow:
-        'hsla(220, 30%, 5%, 0.7) 0px 4px 16px 0px, hsla(220, 25%, 10%, 0.8) 0px 8px 16px -5px',
+        "hsla(220, 30%, 5%, 0.7) 0px 4px 16px, hsla(220, 25%, 10%, 0.8) 0px 8px 16px -5px",
     },
   },
 };
+
 
 export const typography = {
   fontFamily: 'Inter, sans-serif',

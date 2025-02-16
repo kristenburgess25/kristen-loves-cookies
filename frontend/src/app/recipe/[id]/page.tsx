@@ -6,6 +6,8 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Image from "next/image";
+import IngredientsCard from "./components/IngredientsCard";
+import RecipeDetails from "@/app/recipe/[id]/components/RecipeDetails";
 
 export default function RecipePage() {
   const { id } = useParams();
@@ -73,27 +75,36 @@ React.useEffect(() => {
           style={{ borderRadius: "8px", margin: "auto", height: "20rem", width: "100%", objectFit: "cover" }}
         />
       </Box>
+      {/*TODO: Refactor this to only pass image and instructions - if you use it */}
+      {/*<IngredientsCard recipe={recipe}/>*/}
       <Typography variant="inherit" sx={{ marginBottom: "1rem" }}>
         {recipe.introduction}
       </Typography>
-      <Typography variant="h4" gutterBottom>
-        Ingredients
-      </Typography>
-      <ul>
-        {recipe.ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </ul>
-      <Typography variant="h4" gutterBottom sx={{ mt: 4 }}>
-        Instructions
-      </Typography>
-      <ol>
-        {recipe.instructions.map((step, index) => (
-          <li key={index} style={{ margin: '1rem 0'}}>
-            {step}
-          </li>
-        ))}
-      </ol>
+      <RecipeDetails recipe={recipe} />
+      {/*<Box sx={{ display: "flex", flexDirection: "row" }}>*/}
+      {/*  <Box sx={{ width: "40%" }}>*/}
+      {/*    <Typography variant="h4" gutterBottom>*/}
+      {/*      Ingredients*/}
+      {/*    </Typography>*/}
+      {/*    <ul className="ingredients-list">*/}
+      {/*      {recipe.ingredients.map((ingredient, index) => (*/}
+      {/*        <li key={index}>{ingredient}</li>*/}
+      {/*      ))}*/}
+      {/*    </ul>*/}
+      {/*  </Box>*/}
+      {/*  <Box sx={{ width: "60%" }}>*/}
+      {/*    <Typography variant="h4" gutterBottom>*/}
+      {/*      Instructions*/}
+      {/*    </Typography>*/}
+      {/*    <ol>*/}
+      {/*      {recipe.instructions.map((step, index) => (*/}
+      {/*        <li key={index} style={{ margin: '1rem 0'}}>*/}
+      {/*          {step}*/}
+      {/*        </li>*/}
+      {/*      ))}*/}
+      {/*    </ol>*/}
+      {/*  </Box>*/}
+      {/*</Box>*/}
     </Container>
   );
 }
