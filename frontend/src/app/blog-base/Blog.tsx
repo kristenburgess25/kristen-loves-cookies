@@ -12,14 +12,24 @@ export default function Blog(props: BlogParams) {
 
   return (
     <AppTheme disableCustomTheme={disableCustomTheme}>
-      <CssBaseline enableColorScheme />
-
+      {/*<CssBaseline enableColorScheme />*/}
       <Container
         maxWidth="lg"
         component="main"
-        sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}
+        sx={{display: 'flex', flexDirection: 'column', my: 16, gap: 4}}
       >
-        <MainContent recipes={recipes} />
+        <div id="hero-img">
+          <img
+            src="/assets/recipes/cookie-stock-banner.jpg"
+            alt="Cookie Banner"
+            style={{
+              width: "100%",
+              height: "20rem",
+              objectFit: "cover"
+            }}
+          />
+        </div>
+        <MainContent recipes={recipes}/>
         {/*<Latest />*/}
       </Container>
     </AppTheme>
