@@ -9,7 +9,7 @@ const RecipeDetails = ({ recipe }) => {
       <Grid container spacing={4}>
         {/* Ingredients Section */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" color="primary" gutterBottom>
             Ingredients
           </Typography>
           <ul className="ingredients-list" style={{ paddingLeft: "1rem" }}>
@@ -21,7 +21,7 @@ const RecipeDetails = ({ recipe }) => {
 
         {/* Instructions Section */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" color="primary" gutterBottom>
             Instructions
           </Typography>
           <ol style={{ paddingLeft: "1rem" }}>

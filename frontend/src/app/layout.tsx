@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppAppBar from "./blog-base/components/AppAppBar"; // ✅ Navbar
 import Footer from "./blog-base/components/Footer"; // ✅ Footer
-import AppTheme from "./shared-theme/AppTheme"; // ✅ Move Theme inside <body>
+import AppTheme from "./shared-theme/AppTheme";
+import React from "react"; // ✅ Move Theme inside <body>
 
 // ✅ Fonts (Keep these the same)
 const geistSans = Geist({
@@ -29,14 +30,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* ✅ FIX: AppTheme is a Client Component, so we move it INSIDE `body` */}
-        <AppTheme>
-          <AppAppBar /> {/* ✅ Navbar */}
-          <main>{children}</main> {/* ✅ Page Content */}
-          <Footer /> {/* ✅ Footer */}
-        </AppTheme>
-      </body>
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet"/>
+    <AppTheme>
+      <AppAppBar/> {/* ✅ Navbar */}
+      <main>{children}</main>
+      {/* ✅ Page Content */}
+      <Footer/> {/* ✅ Footer */}
+    </AppTheme>
+    </body>
     </html>
   );
 }

@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
+import RecipeCard from './RecipeCard'
 
 const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
@@ -53,37 +54,6 @@ interface RecipeCardProps {
   recipe: Recipe;
 }
 
-const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
-  return (
-    <Link href={`/recipe/${recipe.id}`}>
-      <StyledCard variant="outlined">
-        <CardMedia
-          component="img"
-          alt={recipe.title}
-          image={`/assets/articles/${recipe.hero_image}` || '/placeholder-image.jpg'} // Placeholder for now
-          sx={{ aspectRatio: '16 / 9', borderBottom: '1px solid', borderColor: 'divider' }}
-        />
-        <StyledCardContent>
-          <Typography gutterBottom variant="caption" component="div">
-            {recipe.category}
-          </Typography>
-          <Typography gutterBottom variant="h6" component="div">
-            {recipe.title}
-          </Typography>
-          <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-            {recipe.subtitle}
-          </StyledTypography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-            {recipe.tags?.map((tag, index) => (
-              <Chip key={index} label={tag} size="small" />
-  ))}
-          </Box>
-        </StyledCardContent>
-      </StyledCard>
-    </Link>
-  );
-};
-
 interface MainContentProps {
   recipes: Recipe[];
 }
@@ -91,7 +61,7 @@ interface MainContentProps {
 const MainContent: React.FC<MainContentProps> = ({ recipes }) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-      <Typography variant="h3" sx={{margin: 'auto'}}>
+      <Typography variant="h2" color="secondary" fontFamily="'Cookie', serif" sx={{margin: 'auto', letterSpacing: "0.2rem" }}>
         Featured Favorites
       </Typography>
       <Grid container spacing={2} columns={12}>

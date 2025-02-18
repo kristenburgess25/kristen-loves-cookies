@@ -20,6 +20,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import { useRouter, usePathname } from "next/navigation";
 import CloseIcon from '@mui/icons-material/Close';
+import Typography from "@mui/material/Typography";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
@@ -96,10 +97,20 @@ const handleSearchSubmit = (event: React.FormEvent) => {
                   All Recipes
                 </Button>
               </Link>
-              <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                About
-              </Button>
+              <Link href="/about" underline="none">
+                <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+                  About
+                </Button>
+              </Link>
             </Box>
+          </Box>
+
+          <Box sx={{ flexGrow: 1, display: "flex"}}>
+            <Link href="/" underline="none">
+            <Typography variant="h3" fontFamily="'Cookie', serif" color="secondary">
+              Kristen Loves Cookies
+            </Typography>
+            </Link>
           </Box>
 
           {/* Desktop Search Bar */}

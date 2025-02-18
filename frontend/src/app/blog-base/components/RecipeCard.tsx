@@ -74,7 +74,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
           <Typography gutterBottom variant="caption" component="div">
             {recipe.category}
           </Typography>
-          <Typography gutterBottom variant="h6" component="div">
+          <Typography gutterBottom variant="h3" color="secondary" component="div">
             {recipe.title}
           </Typography>
           <StyledTypography variant="body2" color="text.secondary" gutterBottom>

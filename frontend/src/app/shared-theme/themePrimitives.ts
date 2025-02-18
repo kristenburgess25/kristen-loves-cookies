@@ -363,7 +363,7 @@ export const colorSchemes = {
         paper: "#fff8eb", // Slightly lighter for contrast
       },
       text: {
-        primary: "#1e1013", // Dark Chocolate
+        primary: "#1e1113", // Dark Chocolate
         secondary: "#5a3c44", // Softer cocoa
       },
       action: {
@@ -414,22 +414,26 @@ export const typography = {
   fontFamily: 'Inter, sans-serif',
   h1: {
     fontSize: defaultTheme.typography.pxToRem(48),
-    fontWeight: 600,
+    fontFamily: "'Cookie', serif",
+    fontWeight: 700,
     lineHeight: 1.2,
-    letterSpacing: -0.5,
   },
   h2: {
     fontSize: defaultTheme.typography.pxToRem(36),
-    fontWeight: 600,
+    fontFamily: "'Cookie', serif",
+    fontWeight: 700,
     lineHeight: 1.2,
   },
   h3: {
     fontSize: defaultTheme.typography.pxToRem(30),
+    fontFamily: "'Cookie', serif",
+    fontWeight: 700,
     lineHeight: 1.2,
   },
   h4: {
-    fontSize: defaultTheme.typography.pxToRem(24),
-    fontWeight: 600,
+    fontSize: defaultTheme.typography.pxToRem(30),
+    fontFamily: "'Cookie', serif",
+    fontWeight: 700,
     lineHeight: 1.5,
   },
   h5: {

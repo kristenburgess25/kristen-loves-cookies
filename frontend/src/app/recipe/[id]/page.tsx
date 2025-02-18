@@ -61,7 +61,7 @@ React.useEffect(() => {
   return (
     <Container maxWidth="md" sx={{padding: "5rem 1rem"}}>
       <Box sx={{ textAlign: "center", my: 4 }}>
-        <Typography variant="h2">{recipe.title}</Typography>
+        <Typography variant="h1" color="secondary">{recipe.title}</Typography>
         <Typography variant="subtitle1" color="text.secondary">
           {recipe.subtitle}
         </Typography>
