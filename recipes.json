@@ -394,38 +394,119 @@
       "notes": []
     }
   },
-    {
-    "title": "Baked Donuts",
-    "subtitle": "10/10 recommend filling w/ jam.",
-    "category": "Bread",
+  {
+    "title": "Apple Cinnamon Scones",
+    "subtitle": "with a salted caramel glaze",
+    "category": "Pastries",
     "tags": ["bread", "pastries"],
-    "hero": "baked-donuts.jpeg",
-    "id": "baked-donuts",
+    "hero": "apple-scones-with-glaze.jpeg",
+    "id": "apple-scones",
+    "images": [],
+    "introduction": "These sweet, spicy apple scones with a caramel glaze is sure to bring a warm smile any time of year. These apple cinnamon scones are buttery and moist with crisp-crumbly edges and soft flaky centers. Crunchy coarse sugar and salted caramel are the perfect finishing touches. Read through the recipe before beginning. Refrigerate the shaped scones for at least 15 minutes before baking, to help prevent the scones from over-spreading.",
+    "recipe": {
+      "yield": "8 scones",
+      "prep-time": "",
+      "ingredients": [
+        "2 cups (250g) all-purpose flour (spooned & leveled), plus more for hands and work surface",
+        "2 and 1/2 teaspoons baking powder",
+        "1 and 1/4 teaspoons ground cinnamon",
+        "½ teaspoon salt",
+        "1/2 cup (8 Tbsp; 113g) unsalted butter, frozen",
+        "1/2 cup (120ml) heavy cream, plus 2 Tbsp for brushing",
+        "1 large egg, cold",
+        "1/2 cup (100g) packed light or dark brown sugar",
+        "1 teaspoon pure vanilla extract",
+        "1 heaping cup (125g) peeled and chopped apple",
+        "Optional Toppings: coarse sugar, or 1/2 cup caramel"
+      ],
+      "instructions": [
+        "1. Whisk flour, baking powder, cinnamon, and salt together in a large bowl. Grate the frozen butter using a box grater. Add it to the flour mixture and combine with a pastry cutter, two forks, or your fingers until the mixture comes together in pea-sized crumbs. Place in the refrigerator or freezer as you mix the wet ingredients together.",
+        "2. Whisk 1/2 cup heavy cream, the egg, brown sugar, and vanilla extract together in a small bowl. Drizzle over the flour mixture, add the apples, then mix together until everything appears moistened.",
+        "3. Lightly dust a work surface with flour. Pour the dough mixture on top and, with floured hands, work dough into a ball as best you can. Dough will be sticky. If it’s too sticky, add a little more flour. If it seems too dry, add 1 more Tablespoon of heavy cream. Press into an 8-inch disc and, with a sharp knife or bench scraper, cut into 8 wedges.",
+        "4. Brush scones with remaining heavy cream and if desired for extra crunch, sprinkle with coarse sugar. (You can do this before or after refrigerating in the next step.)",
+        "5. Place scones on a plate or lined baking sheet (if your refrigerator has space!) and refrigerate the shaped scones for at least 15 minutes and up to 1 day.",
+        "6. Meanwhile, preheat the oven to 400°F (204°C).",
+        "7. Line a large baking sheet with parchment paper or silicone baking mat. After refrigerating, arrange scones 2–3 inches apart on the prepared baking sheet(s).",
+        "8. Bake for 22–25 minutes or until golden brown around the edges and lightly browned on top. Remove from the oven and cool for a few minutes before topping with optional caramel sauce.",
+        "9. Leftover scones keep well at room temperature for up to 2 days or in the refrigerator for up to 5 days."
+      ],
+      "notes": []
+    }
+  },
+    {
+    "title": "NY Style Bagels",
+    "subtitle": "Courtesy of NY Times Baking",
+    "category": "Bread",
+    "tags": ["bread"],
+    "hero": "bagels.jpeg",
+    "id": "nyt-bagels",
     "images": [],
     "introduction": "",
     "recipe": {
-      "yield": "12 donuts",
-      "prep-time": "3 hours",
+      "yield": "8 bagels",
+      "prep-time": "",
       "ingredients": [
-        "2 1/2 cups all-purpose flour divided, plus more for dusting",
-		    "1/4 cup granulated sugar",
-		    "1/4 tsp salt",
-		    "2 1/4 tsp instant yeast quick acting, (1 packet = 7 grams)",
-		    "2/3 cup warm milk 110˚F - microwave 35 sec.",
-		    "4 Tbsp unsalted butter melted, divided",
-		    "2 egg yolks",
-		    "1/2 tsp vanilla extract",
-		    "1/3 cup jelly or jam (no large fruit pieces)",
-		    "1/3 cup granulated sugar to roll donuts"
+        "2 teaspoons / 6 g active dry yeast",
+        "4 ½ teaspoons / 19 g granulated sugar",
+        "1 ¼ cups / 300 ml warm water (you may need ± ¼ cup /60 ml more)",
+        "3 ½ cups / 440 g bread flour or high gluten flour (you may need up to 1/2 cup / 60g for kneading)",
+        "1 ½ teaspoons / 6 g salt",
+        "Optional Toppings: (Refer to Notes)"
       ],
       "instructions": [
-        "1. In a large mixing bowl, whisk together 1 cup flour, 1/4 cup sugar, 2 1/4 tsp (1 packet) instant yeast and 1/4 tsp salt.",
-        "2. Add warm milk, 3 Tbsp melted butter, 2 egg yolks and 1/2 tsp vanilla extract, and whisk vigorously to combine well.",
-        "3. Cover with plastic wrap and rest at room temperature 10 minutes, until some bubbles form on the surface.",
-        "4. Add remaining 1 1/2 cups flour, adding just enough until dough holds together and no longer sticks to the sides of the bowl. Knead in the bowl          5 minutes. If dough is really sticking to your hands, dust lightly with flour then continue kneading with clean dry hands. Cover bowl with                plastic wrap and let rise in a 100˚F oven for 45 min or at room temperature for 1 1/2 hours, or until doubled in size.",
-        "5. Line a baking sheet with parchment paper and preheat oven to 375˚F with rack in the center of the oven.",
-        "6. Turn dough out onto a floured surface and roll the dough out to just under 1/2” thick. Cut circles using a 2 1/2 inch round cookie cutter. Re-         roll scraps if needed to make 12 donuts total. Place donuts on prepared baking sheet, cover with a tea towel and let rise in a 100˚F oven for 20           min or at room temperature 45 min, or until puffed. Bake uncovered in the center of a preheated oven at 375˚F for 10-12 minutes or until lightly          golden on top.",
-       "7. Right out of the oven, brush a hot bun all over with remaining 1 Tbsp melted butter and roll in a bowl of sugar to coat lightly with sugar. Cut        a deep slit in the side of each donut and pipe jam with a pastry bag into each one."
+        "1. In ½ cup /120ml of the warm water, pour in the sugar and yeast. Do not stir. Let it sit for five minutes, and then stir the yeast and sugar mixture until it all dissolves in the water.",
+        "2. Mix the flour and salt in a large bowl. Make a well in the middle and pour in the yeast and sugar mixture.",
+        "3. Pour 1/3 cup / 80ml of warm water into the well. Mix and stir in the rest of the water (the scant 1/2 cup / 100ml that is remaining), as needed. Depending on where you live, you may need to add an additional couple tablespoons to about ¼ cup/60ml of water. You want a moist and firm dough after you have mixed it.",
+        "4. On a floured countertop, knead the dough for about 10 minutes until it is smooth and elastic. Try working in as much flour as possible to form a firm and stiff dough.",
+        "5. Lightly brush a large bowl with oil and turn the dough to coat. Cover the bowl with a damp dish towel. Let rise in a warm place for 1 hour, until the dough has doubled in size. Punch the dough down, and let it rest for another 10 minutes.",
+        "6. Carefully divide the dough into 8 pieces (I used a scale to be extra precise, but it’s not necessary). Shape each piece into a round. Now, take a dough ball, and press it gently against the countertop (or whatever work surface you’re using) moving your hand and the ball in a circular motion pulling the dough into itself while reducing the pressure on top of the dough slightly until a perfect dough ball forms. Repeat with 7 other dough rounds.",
+        "7. Coat a finger in flour, and gently press your finger into the center of each dough ball to form a ring. Stretch the ring to about ⅓ the diameter of the bagel and place on a lightly oiled cookie sheet. Repeat the same step with the remaining dough.",
+        "8. After shaping the bagels and placing them on the cookie sheet, cover with a damp kitchen towel and allow to rest for 10 minutes. Meanwhile, preheat your oven to 425ºF / 220ºC / Gas Mark 7.",
+        "9. Bring a large pot of water to a boil. Reduce the heat. Use a slotted spoon or skimmer to lower the bagels into the water. Boil as many as you are comfortable with boiling. Once the bagels are in, it shouldn’t take too long for them to float to the top (a couple seconds). Let them sit there for 1 minute, and then flip them over to boil for another minute. Extend the boiling times to 2 minutes each, if you’d prefer a chewier bagel (results will give you a more New York-Style bagel with this option).",
+        "10. If you want to add toppings to your bagels, do so as you take them out of the water. Alternatively, you can use an egg wash to get the toppings to stick before baking the bagels. Use just one topping, or a combination to make your own Everything Bagel Seasoning.",
+        "11. Once all the bagels have boiled (and have been topped with your choice of toppings), transfer them to an oiled or parchment-lined baking sheet.",
+        "12. Bake for 20 - 25 minutes, or until golden brown (I usually err on the side of 20 minutes).",
+        "13. Cool on a wire rack. Or, if you’re impatient like I am, slice one of these babies open and spread on some of your favorite cream cheese or softened butter. Take a bite… Oh babyyy!"
+      ],
+      "notes": [
+        "Optional Toppings: Caraway seeds, cinnamon sugar, coarse salt, minced fresh garlic, minced fresh onion, poppy seeds, sesame seeds, everything bagel seasoning, or a mix of your favorite flavors.",
+        "Water measurement & similar concerns: The recipe measurements for the water in the recipe is a guide; not all 1 1/4 cups (300 ml) will be used unless you need it. This is because of environmental factors (humidity, temperature, altitude, etc.) and the flour you are using. The most important thing when making the dough is to make sure it is homogenous and smooth– do not get caught up on the water measurement. If the dough is too firm, add in more water to ensure the dough is not dry and flaky– this has to be done when mixing the dough, not after you’ve allowed it to rise."
+      ]
+    }
+  },
+    {
+    "title": "Low-Carb Blueberry Muffins",
+    "subtitle": "A keto take on the famous Ritz Carlton blueberry muffins",
+    "category": "Keto",
+    "tags": ["Keto", "Pastries"],
+    "hero": "keto-blueberry-muffins.jpeg",
+    "id": "keto-blueberry-muffins",
+    "images": [],
+    "introduction": "Inspired by the famous and decadent Ritz Carlton blueberry breakfast muffins, this is my keto(ish) version.",
+    "recipe": {
+      "yield": "",
+      "prep-time": "",
+      "ingredients": [
+        "2 cups almond flour",
+        "2/3 cup coconut flour",
+        "2 Tbsp baking powder",
+        "1/2 cup granulated sweetener",
+        "Pinch salt",
+        "4 eggs",
+        "2 Tbsp chia plus 4 Tbsp water",
+        "2 tsp xanthan gum",
+        "1/2 cup milk",
+        "1 tsp apple cider vinegar",
+        "2 tsp vanilla",
+        "1 tsp almond extract",
+        "5 oz (10 Tbsp) unsalted butter, melted but not hot",
+        "2 cups blueberries, fresh or frozen"
+      ],
+      "instructions": [
+        "1. Preheat oven to 400°F (204°C).",
+        "2. Mix all dry ingredients together. Stir in eggs, milk, and butter; do not overmix. Carefully stir in berries.",
+        "3. Grease the top of large muffin tins. Insert paper cups and spoon batter to the top of the paper cups. Sprinkle generously with sugar.",
+        "4. Reduce heat to 350°F (177°C), place muffin tins on the middle shelf of the oven. Bake about 25 minutes, until muffins are golden brown. Remove from muffin tins and cool."
       ],
       "notes": []
     }
