@@ -33,10 +33,9 @@ export default function RootLayout({
     <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet"/>
     <AppTheme>
-      <AppAppBar/> {/* ✅ Navbar */}
+      <AppAppBar/>
       <main>{children}</main>
-      {/* ✅ Page Content */}
-      <Footer/> {/* ✅ Footer */}
+      <Footer/>
     </AppTheme>
     </body>
     </html>

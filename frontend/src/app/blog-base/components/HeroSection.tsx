@@ -52,7 +52,7 @@ export default function HeroSection() {
           variant="h1"
           color="primary"
           fontWeight={700}
-          fontSize="7rem"
+          fontSize="6rem"
           fontFamily="'Cookie', serif"
         >
           Kristen Loves Cookies

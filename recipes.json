@@ -510,5 +510,112 @@
       ],
       "notes": []
     }
+  },
+  {
+    "title": "Brioche Bread",
+    "subtitle": "Two days of effort for buttery bread bliss",
+    "category": "Bread",
+    "tags": ["bread", "pastry"],
+    "hero": "brioche.jpeg",
+    "id": "brioche",
+    "images": [],
+    "introduction": "This recipe is not for the weak of heart - and definitely not for those without a KitchenAid mixer.",
+    "recipe": {
+      "yield": "2 Loaves",
+      "prep-time": "2 Days",
+      "ingredients": [
+        "½ cup warm milk",
+        "2 ½ tsp active dry yeast (about 9 g)",
+        "2 tsp honey",
+        "5 large eggs (You can also use 4 large eggs)",
+        "1 yolk from a large egg (Use 2 egg yolks if using 4 large eggs)",
+        "2 tsp vanilla",
+        "2.1 oz granulated white sugar (5 tbsp)",
+        "17.6 oz AP flour (4 cups + 2 tbsp, spooned and leveled)",
+        "1 ½ tsp sea salt (fine grind)",
+        "8.8 oz unsalted butter, very soft (roughly divided into four portions, 1 cup + 2 tbsp)"
+      ],
+      "instructions": [
+        "DAY ONE:",
+        "1. Measure all the ingredients and have them ready.",
+        "2. Add the milk, yeast, and honey into the mixing bowl and whisk gently to combine. Set aside for 10 minutes to allow the yeast to activate.",
+        "3. Add the eggs and yolks, and whisk gently to break the egg yolks.",
+        "4. Add the vanilla, sugar, flour, and sea salt, and mix to form a scraggly dough.",
+        "5. With the dough hook attachment, knead the dough on speed 2 or 3 for about 3 - 5 minutes.",
+        "6. Divide the butter into roughly 4 portions. Add the first portion of butter in increments after the first 5 minutes of kneading. Allow the butter to be mixed well into the dough. This should take about 2 minutes.",
+        "7. Repeat with the other 3 portions of butter, kneading the dough for about 2 -3 minutes after each addition. Make sure to stop the mixer to scrape down the sides of the bowl (and the bottom if needed) between kneading as well. You will have incorporated all the butter in about 9 - 12 minutes of kneading time.",
+        "8. Once all the butter is incorporated, scrape down the sides of the bowl (and bottom if needed), and knead the dough for a further 5 - 15 minutes on speed 5 or 6. As per the recipe, this can take up to 20 - 30 minutes if your mixer is on low speed.",
+        "9. The dough will have been kneaded enough when it can be lifted fairly cleanly off the bottom of the bowl when picked up with the dough hook. It will be very soft and tacky to the touch but shouldn’t stick to your fingertips. Rather than going by time, knead the dough until you have reached this consistency.",
+        "10. Flour your work surface, and turn the dough out onto the floured surface. Lightly flour your hands and the surface of the dough to prevent the dough from sticking to your palms.",
+        "11. Fold in the edges of the dough towards the middle and gently press them into the dough. Carefully flip the dough over, and then with the heel of your palms, shape the dough to form a tight ball.",
+        "12. Carefully pick up the dough ball and place it back in the mixer bowl (or another large bowl).",
+        "13. Let it rise until it has doubled in size, in a warm place (72°F), for about 1 hour.",
+        "14. Turn the dough out onto a lightly floured surface, and press down gently to deflate the dough with your hands. Fold in the edges again as before towards the middle and press them in. Carefully flip the dough over (seam side down now). Tighten the dough into a ball with a smooth, taut surface (using the edges of your palms). Transfer the dough into the mixer bowl again.",
+        "15. Cover and let it chill in the fridge for at least 8 hours, or up to 24 hours.",
+
+        "DAY TWO:",
+        "1. Remove the chilled dough from the fridge. The dough will be much easier to work with now.",
+        "2. Butter and dust two 8.5 x 4 inch standard loaf pans with flour. (You can also use 9 x 5 inch loaf pans).",
+        "3. Keep a bowl of flour, a pastry brush, and a dough scraper/cutter ready as well.",
+        "4. Turn the dough out onto a lightly floured surface. Deflate the dough by flattening it lightly. Measure the weight of the dough, and then divide it into two EQUAL portions using the dough cutter or a sharp knife.",
+        "5. Now you've got two dough portions to make two brioche bread loaves.",
+
+        "BRAIDED LOAF:",
+        "1. Divide one portion of the dough into 3 equal portions.",
+        "2. Flatten each portion into a small rectangle. Then tightly roll up the rectangle to form a tube. Using your palms, and a back and forth motion, roll out the dough into a 14-inch-long bread rope. Apply light but even pressure to get a bread rope with even width.",
+        "3. Repeat with the other two portions.",
+        "4. Now you have three 14-inch-long bread ropes. Bring the ends of the three ropes together and pinch to seal. Braid the dough while being careful to avoid any loose folds and to not stretch the dough ropes at the same time. Once braided, the bread loaf should be a little longer than the length of the pan (about 9 - 10 inches).",
+        "5. Pinch to seal the other end. Using your palms, press down the ends of the bread to flatten them against the work surface. Tuck the flattened ends to get a lovely, rounded loaf.",
+        "6. Carefully transfer this to the buttered and floured bread pan. Flatten slightly to fit the loaf pan.",
+        "7. Cover with plastic wrap and set aside.",
+
+        "PROOFING BEFORE BAKING:",
+        "1. Proof the bread in the covered loaf pans for about 2 hours at room temperature, or until doubled in size, and almost reaching the top of the pan. Preheat the oven to 325°F/163°C before baking the loaves.",
+        "2. Once doubled in size, brush the tops with an egg wash. Optionally, you can also sprinkle some Swedish sugar pearls on top for a sweet crunch.",
+        "3. Bake in a preheated oven until golden brown on top and the internal temperature registers 190°F/88°C. This can take about 35 - 45 minutes.",
+        "4. Remove from the oven and let the bread loaf cool slightly - about 5 minutes.",
+        "5. Carefully flip the bread loaf out of the pan onto a cooling rack. Let it cool completely. Store in an air-tight container."
+      ],
+      "notes": []
+    }
+  },
+  {
+    "title": "Dinner Rolls",
+    "subtitle": "So quick, so easy, so buttery.",
+    "category": "Bread",
+    "tags": ["breads", "quick"],
+    "hero": "dinner-rolls.jpeg",
+    "id": "dinner-rolls",
+    "images": [],
+    "introduction": "Light, fluffy, buttery dinner rolls are impossible to resist. Homemade with just a handful of simple ingredients, the BEST Dinner Rolls can you be on your table in a jiffy. They really are the perfect addition to any meal!",
+    "recipe": {
+      "yield": "24 rolls",
+      "prep-time": "1.5 hrs",
+      "ingredients": [
+        "2 cups bread flour",
+        "2-3 cups all purpose flour",
+        "2 tablespoons rapid rise, instant yeast",
+        "⅓ cup granulated sugar",
+        "1 tsp salt",
+        "1½ cups warm milk (110 degrees)",
+        "5 tablespoons butter, softened",
+        "1 egg, room temperature",
+        "2 tablespoons melted butter"
+      ],
+      "instructions": [
+        "1. Combine 3 cups of flour, yeast, sugar, salt, warm milk, butter, and egg in the bowl of a stand mixer.",
+        "2. Attach the dough hook and turn the mixer on to the lowest speed and mix until flour is incorporated, scraping down the sides of the bowl as necessary.",
+        "3. Increase speed to medium and beat for 2 minutes.",
+        "4. Add 1/2 cup flour and blend with the dough hook until incorporated. Add another 1/2 cup flour and repeat, mixing at medium speed for another 2 minutes until a ball of dough is formed.",
+        "5. Add additional flour as necessary. The dough should be slightly sticky and soft and pulling away from the edge of the bowl.",
+        "6. Transfer the dough to a lightly greased bowl and cover with a towel or plastic wrap. Let rise for 30 minutes at room temperature.",
+        "7. Remove the towel or plastic wrap and deflate the dough by punching down lightly.",
+        "8. Pinch off pieces of the dough and form 24 rolls. You can weigh them to keep the rolls close to the same size (about 2 ounces each, but this may vary).",
+        "9. Transfer the rolls to a lightly greased quarter baking sheet or 9 x 13 baking dish. Cover with a towel or plastic wrap and let rise for an additional 30 minutes at room temperature.",
+        "10. Preheat oven to 375 degrees. Bake the rolls for 12 to 15 minutes or until golden brown and cooked through. If the rolls are getting too brown, tent them with foil.",
+        "11. Remove rolls and brush hot rolls with the melted butter. Serve immediately or store cooled rolls in a plastic bag for up to 3 days."
+      ],
+      "notes": ["If rolls start to get too brown before they are finished baking, tent with foil to prevent additional browning."]
+    }
   }
 ]

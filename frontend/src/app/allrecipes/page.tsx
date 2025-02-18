@@ -142,7 +142,7 @@ export default function AllRecipesPage() {
               {searchTerm ? `Showing results for "${searchTerm}"` : "Browse all recipes"}
             </Typography>
             {searchTerm && (
-              <Button variant="outlined" color="secondary" onClick={handleClearSearch}>
+              <Button variant="outlined" color="primary" sx={{ mr: '1rem' }} onClick={handleClearSearch}>
                 Clear Search
               </Button>
             )}

@@ -106,13 +106,13 @@ export default function Footer() {
               margin: 'auto',
             }}
           >
-            <Link color="text.secondary" variant="body2" href="#">
-              Terms
-            </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            {/*<Link color="text.secondary" variant="body2" href="#">*/}
+            {/*  Terms*/}
+            {/*</Link>*/}
+            <Link href="/about" color="text.secondary" variant="body2">
               About
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link href="mailto:kristenlovescookie@gmail.com" color="text.secondary" variant="body2">
               Contact
             </Link>
           </Box>

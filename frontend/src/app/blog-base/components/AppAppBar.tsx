@@ -188,7 +188,9 @@ const handleSearchSubmit = (event: React.FormEvent) => {
                 <Link href="/allrecipes">
                   <MenuItem>All Recipes</MenuItem>
                 </Link>
-                <MenuItem>About</MenuItem>
+                <Link href="/about">
+                 <MenuItem>About</MenuItem>
+                </Link>
                 <Divider sx={{ my: 3 }} />
               </Box>
             </Drawer>
