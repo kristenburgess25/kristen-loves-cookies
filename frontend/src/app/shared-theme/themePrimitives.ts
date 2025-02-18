@@ -383,8 +383,8 @@ export const colorSchemes = {
         contrastText: "#1e1013", // Dark Chocolate Text
       },
       secondary: {
-        light: "#e88ea5",
-        main: "#c96a8b", // Rose Pink
+        light: "#f79ebb",
+        main: "#f79ebb", // Rose Pink
         dark: "#923e5a",
         contrastText: "#1e1013",
       },

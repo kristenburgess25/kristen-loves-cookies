@@ -10,7 +10,7 @@ import { styled, useTheme } from "@mui/material/styles";
 const StyledCard = styled(Card)(({ theme }) => ({
   position: "relative",
   width: "100%",
-  height: 250, // ✅ Shorter height
+  height: 350, // ✅ Shorter height for better layout
   backgroundColor: theme.palette.background.paper,
   "&:hover .overlay": {
     opacity: 1, // ✅ Show overlay on hover (desktop)
@@ -26,7 +26,7 @@ const Overlay = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "flex-end",
-  padding: "12px",
+  padding: "16px",
   opacity: 0, // ✅ Hidden by default (except on mobile)
   transition: "opacity 0.3s ease-in-out",
   [theme.breakpoints.down("md")]: {
@@ -47,14 +47,14 @@ interface RecipeCardProps {
   recipe: Recipe;
 }
 
-const RecipeCardCompact: React.FC<RecipeCardProps> = ({ recipe }) => {
+const RecipeCardTile: React.FC<RecipeCardProps> = ({ recipe }) => {
   const theme = useTheme();
 
-  // ✅ Adjust overlay color dynamically based on theme
-  const overlayColor =
+  // ✅ Overlay Gradient Adjusted for Light/Dark Mode
+  const overlayGradient =
     theme.palette.mode === "dark"
-      ? "rgba(0, 0, 0, 0.6)" // Dark mode: deep chocolate
-      : "rgba(255, 247, 230, 0.8)"; // Light mode: warm buttery
+      ? "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 90%)"
+      : "linear-gradient(to bottom, rgba(255, 247, 230, 0) 0%, rgba(255, 247, 230, 0.8) 90%)";
 
   return (
     <Link href={`/recipe/${recipe.id}`} underline="none">
@@ -72,13 +72,16 @@ const RecipeCardCompact: React.FC<RecipeCardProps> = ({ recipe }) => {
         />
 
         {/* Overlay (Appears on Hover / Always visible on mobile) */}
-        <Overlay className="overlay" sx={{ backgroundColor: overlayColor }}>
+        <Overlay
+          className="overlay"
+          sx={{
+            background: overlayGradient, // ✅ Use `background` for gradient
+          }}
+        >
           <Typography
             variant="h2"
             fontFamily="'Cookie', serif"
-            sx={{
-              color: theme.palette.mode === "dark" ? "#fdeacc" : "#1e1013", // ✅ Light/dark text
-            }}
+            color="secondary"
           >
             {recipe.title}
           </Typography>
@@ -113,4 +116,4 @@ const RecipeCardCompact: React.FC<RecipeCardProps> = ({ recipe }) => {
   );
 };
 
-export default RecipeCardCompact;
+export default RecipeCardTile;

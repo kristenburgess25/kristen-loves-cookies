@@ -117,14 +117,6 @@ const MainContent: React.FC<MainContentProps> = ({ recipes }) => {
 
   return (
     <TileContainer>
-      <Typography
-        variant="h2"
-        color="secondary"
-        fontFamily="'Cookie', serif"
-        sx={{ margin: 'auto', letterSpacing: '0.2rem' }}
-      >
-        Featured Favorites
-      </Typography>
       <Grid container spacing={2}>
         {recipes.map((recipe, index) => {
           const gridProps = tilePattern[index % tilePattern.length]; // Cycles through the tile pattern

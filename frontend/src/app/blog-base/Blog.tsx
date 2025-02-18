@@ -21,6 +21,7 @@ export default function Blog(props: BlogParams) {
       >
         <HeroSection />
         <MainContent recipes={recipes}/>
+        <MainContent recipes={recipes}/>
         {/*<Latest />*/}
       </Container>
     </AppTheme>
