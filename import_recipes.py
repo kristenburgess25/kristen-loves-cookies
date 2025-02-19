@@ -33,6 +33,15 @@ def get_or_create_tags(session, tag_names):
 def import_recipes():
     with Session(engine) as session:
         for recipe_data in recipes_data:
+            # Check if recipe with the same ID already exists
+            existing_recipe = session.execute(
+                select(Recipe).where(Recipe.id == recipe_data["id"])
+            ).scalar_one_or_none()
+
+            if existing_recipe:
+                print(f"❌ Skipping {recipe_data['title']} - already exists in database.")
+                continue  # Skip this recipe if it already exists
+
             # Get/Create Category
             category = get_or_create_category(session, recipe_data["category"])
 
@@ -64,6 +73,7 @@ def import_recipes():
 
         session.commit()
         print("✅ Recipes imported successfully!")
+
 
 # 📌 Run the import function
 if __name__ == "__main__":
