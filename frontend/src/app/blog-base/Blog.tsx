@@ -30,8 +30,8 @@ export default function Blog(props: BlogParams) {
     <AppTheme disableCustomTheme={disableCustomTheme}>
       {/*<CssBaseline enableColorScheme />*/}
       <Container
-        maxWidth="lg"
         component="main"
+        maxWidth="xl"
         sx={{display: 'flex', flexDirection: 'column', my: 16, gap: 4}}
       >
         <HeroSection />

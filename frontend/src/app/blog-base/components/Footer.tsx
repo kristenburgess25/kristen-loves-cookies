@@ -15,9 +15,7 @@ import Typography from '@mui/material/Typography';
 function Copyright() {
   return (
     <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
-      {'Copyright © Kristen Burgess '}
-      &nbsp;
-      {new Date().getFullYear()}
+      {'Copyright © Kristen Burgess 2025 '}
     </Typography>
   );
 }

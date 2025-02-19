@@ -11,12 +11,15 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 # Add CORS Middleware
+# Get environment variable for frontend URL
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")  # Default for local dev
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 🔥 Allows requests from any origin (for development only)
+    allow_origins=[FRONTEND_URL],  # Restrict to frontend domain
     allow_credentials=True,
-    allow_methods=["*"],  # 🔥 Allows all HTTP methods (GET, POST, etc.)
-    allow_headers=["*"],  # 🔥 Allows all headers
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],  # Only allow necessary headers
 )
 
 # Dependency to get a DB session

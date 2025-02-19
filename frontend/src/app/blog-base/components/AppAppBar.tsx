@@ -81,23 +81,23 @@ const handleSearchSubmit = (event: React.FormEvent) => {
         mt: "calc(var(--template-frame-height, 0px) + 28px)",
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <StyledToolbar variant="dense" disableGutters>
           <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center", px: 0 }}>
             {/* <Sitemark /> */}
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <Link href="/" underline="none">
-                <Button variant="text" color="info" size="small">
+                <Button variant="text" color="info" size="medium">
                   Home
                 </Button>
               </Link>
               <Link href="/allrecipes" underline="none">
-                <Button variant="text" color="info" size="small">
+                <Button variant="text" color="info" size="medium">
                   All Recipes
                 </Button>
               </Link>
               <Link href="/about" underline="none">
-                <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+                <Button variant="text" color="info" size="medium" sx={{ minWidth: 0 }}>
                   About
                 </Button>
               </Link>
