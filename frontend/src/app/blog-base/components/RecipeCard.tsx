@@ -12,10 +12,10 @@ const StyledCard = styled(Card)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   height: "100%",
-  backgroundColor: theme.palette.background.paper, // ✅ Apply theme-based background
-  color: theme.palette.text.primary, // ✅ Ensure text color adjusts to theme
+  backgroundColor: theme.palette.background.paper,
+  color: theme.palette.text.primary,
   "&:hover": {
-    backgroundColor: theme.palette.action.hover, // ✅ Adjust hover state to match theme
+    backgroundColor: theme.palette.action.hover,
     cursor: "pointer",
   },
 }));

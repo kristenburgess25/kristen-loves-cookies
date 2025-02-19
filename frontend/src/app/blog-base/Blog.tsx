@@ -5,7 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import AppTheme from '../shared-theme/AppTheme';
 import MainContent from './components/MainContent';
-import Latest from './components/Latest';
 import HeroSection from "./components/HeroSection";
 import Quote from "./components/Quote"
 
@@ -31,8 +30,8 @@ export default function Blog(props: BlogParams) {
     <AppTheme disableCustomTheme={disableCustomTheme}>
       {/*<CssBaseline enableColorScheme />*/}
       <Container
-        maxWidth="lg"
         component="main"
+        maxWidth="xl"
         sx={{display: 'flex', flexDirection: 'column', my: 16, gap: 4}}
       >
         <HeroSection />

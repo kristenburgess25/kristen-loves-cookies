@@ -10,10 +10,10 @@ import { styled, useTheme } from "@mui/material/styles";
 const StyledCard = styled(Card)(({ theme }) => ({
   position: "relative",
   width: "100%",
-  height: 350, // ✅ Shorter height for better layout
+  height: 350,
   backgroundColor: theme.palette.background.paper,
   "&:hover .overlay": {
-    opacity: 1, // ✅ Show overlay on hover (desktop)
+    opacity: 1, // Show overlay on hover (desktop)
   },
 }));
 
@@ -27,10 +27,10 @@ const Overlay = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "flex-end",
   padding: "16px",
-  opacity: 0, // ✅ Hidden by default (except on mobile)
+  opacity: 0, // Hidden by default (except on mobile)
   transition: "opacity 0.3s ease-in-out",
   [theme.breakpoints.down("md")]: {
-    opacity: 1, // ✅ Always visible on mobile
+    opacity: 1, // Always visible on mobile
   },
 }));
 
@@ -50,7 +50,7 @@ interface RecipeCardProps {
 const RecipeCardTile: React.FC<RecipeCardProps> = ({ recipe }) => {
   const theme = useTheme();
 
-  // ✅ Overlay Gradient Adjusted for Light/Dark Mode
+  // Overlay Gradient Adjusted for Light/Dark Mode
   const overlayGradient =
     theme.palette.mode === "dark"
       ? "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 90%)"
@@ -75,7 +75,7 @@ const RecipeCardTile: React.FC<RecipeCardProps> = ({ recipe }) => {
         <Overlay
           className="overlay"
           sx={{
-            background: overlayGradient, // ✅ Use `background` for gradient
+            background: overlayGradient,
           }}
         >
           <Typography
@@ -88,7 +88,7 @@ const RecipeCardTile: React.FC<RecipeCardProps> = ({ recipe }) => {
           <Typography
             variant="body2"
             sx={{
-              color: theme.palette.mode === "dark" ? "#e3c5b5" : "#5a3c44", // ✅ Adjusted contrast
+              color: theme.palette.mode === "dark" ? "#e3c5b5" : "#5a3c44",
             }}
           >
             {recipe.subtitle}
@@ -103,7 +103,7 @@ const RecipeCardTile: React.FC<RecipeCardProps> = ({ recipe }) => {
                   backgroundColor:
                     theme.palette.mode === "dark"
                       ? "rgba(255,255,255,0.2)"
-                      : "rgba(0, 0, 0, 0.1)", // ✅ Light/Dark contrast
+                      : "rgba(0, 0, 0, 0.1)",
                   color: theme.palette.mode === "dark" ? "#fdeacc" : "#1e1013",
                   fontWeight: 500,
                 }}

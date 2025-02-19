@@ -32,8 +32,8 @@ export default function AboutPage() {
       </Typography>
       <br />
       <Typography variant="h3" fontStyle="italic" color="primary" gutterBottom>
-          -Kristen
-        </Typography>
+        -Kristen
+      </Typography>
     </Container>
   );
 }

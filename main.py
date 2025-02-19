@@ -10,13 +10,16 @@ from sqlalchemy.orm import joinedload
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
-# ✅ Add CORS Middleware
+# Add CORS Middleware
+# Get environment variable for frontend URL
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")  # Default for local dev
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 🔥 Allows requests from any origin (for development only)
+    allow_origins=[FRONTEND_URL],  # Restrict to frontend domain
     allow_credentials=True,
-    allow_methods=["*"],  # 🔥 Allows all HTTP methods (GET, POST, etc.)
-    allow_headers=["*"],  # 🔥 Allows all headers
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],  # Only allow necessary headers
 )
 
 # Dependency to get a DB session
@@ -88,7 +91,7 @@ def search_recipes(query: str, db: Session = Depends(get_db)):
     )
     return result
 
-# ✅ Ensure the app binds to the correct port
+# Ensure the app binds to the correct port
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8080))  # Cloud Run requires PORT=8080
     print(f"🚀 Starting FastAPI on port {port}...")

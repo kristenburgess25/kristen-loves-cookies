@@ -58,18 +58,17 @@ const handleSearchSubmit = (event: React.FormEvent) => {
   if (!searchQuery.trim()) return;
 
   if (pathname === "/allrecipes") {
-    // ✅ Update search query in URL (without refresh)
+    // Update search query in URL (without refresh)
     const url = new URL(window.location.href);
     url.searchParams.set("search", searchQuery);
     window.history.pushState({}, "", url.toString());
     window.dispatchEvent(new Event("searchUpdated")); // 🔥 Fire event manually
   } else {
-    // ✅ Redirect to `/allrecipes` with search query
+    // Redirect to `/allrecipes` with search query
     router.push(`/allrecipes?search=${encodeURIComponent(searchQuery)}`);
     window.dispatchEvent(new Event("searchUpdated")); // 🔥 Ensure it updates immediately
   }
 };
-
 
   return (
     <AppBar
@@ -82,23 +81,23 @@ const handleSearchSubmit = (event: React.FormEvent) => {
         mt: "calc(var(--template-frame-height, 0px) + 28px)",
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <StyledToolbar variant="dense" disableGutters>
           <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center", px: 0 }}>
             {/* <Sitemark /> */}
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <Link href="/" underline="none">
-                <Button variant="text" color="info" size="small">
+                <Button variant="text" color="info" size="medium">
                   Home
                 </Button>
               </Link>
               <Link href="/allrecipes" underline="none">
-                <Button variant="text" color="info" size="small">
+                <Button variant="text" color="info" size="medium">
                   All Recipes
                 </Button>
               </Link>
               <Link href="/about" underline="none">
-                <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+                <Button variant="text" color="info" size="medium" sx={{ minWidth: 0 }}>
                   About
                 </Button>
               </Link>
