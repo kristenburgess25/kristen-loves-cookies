@@ -10,7 +10,7 @@ from sqlalchemy.orm import joinedload
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
-# ✅ Add CORS Middleware
+# Add CORS Middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # 🔥 Allows requests from any origin (for development only)
@@ -88,7 +88,7 @@ def search_recipes(query: str, db: Session = Depends(get_db)):
     )
     return result
 
-# ✅ Ensure the app binds to the correct port
+# Ensure the app binds to the correct port
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8080))  # Cloud Run requires PORT=8080
     print(f"🚀 Starting FastAPI on port {port}...")

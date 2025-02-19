@@ -13,7 +13,6 @@ import { styled } from "@mui/material/styles";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-// ✅ Load API URL from .env properly
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
 interface Recipe {
@@ -46,7 +45,7 @@ export default function AllRecipesPage() {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState(searchParams.get("search") || "");
 
-  // ✅ Fetch recipes on mount
+  // Fetch recipes on mount
   React.useEffect(() => {
     fetch(`${API_URL}/recipes`)
       .then((res) => res.json())
@@ -55,7 +54,7 @@ export default function AllRecipesPage() {
           setRecipes(data);
           setFilteredRecipes(data);
 
-          // ✅ Get unique categories
+          // Get unique categories
           const uniqueCategories = [
             ...new Set(data.map((recipe: Recipe) => recipe.category)),
           ];
@@ -72,20 +71,20 @@ export default function AllRecipesPage() {
       });
   }, []);
 
-  // ✅ Update search term when URL query changes
+  // Update search term when URL query changes
   useEffect(() => {
     const updatedSearchQuery = searchParams.get("search") || "";
     setSearchTerm(updatedSearchQuery);
   }, [searchParams]);
 
-  // ✅ Filter recipes when search term changes
+  // Filter recipes when search term changes
   useEffect(() => {
     if (!searchTerm.trim()) {
       setFilteredRecipes(recipes);
       return;
     }
 
-    // ✅ Filter recipes dynamically
+    // Filter recipes dynamically
     const filtered = recipes.filter((recipe) =>
       [recipe.title, recipe.subtitle, recipe.category, ...(recipe.tags || [])]
         .join(" ")
@@ -96,7 +95,7 @@ export default function AllRecipesPage() {
     setFilteredRecipes(filtered);
   }, [searchTerm, recipes]);
 
-  // ✅ Handle category selection
+  // Handle category selection
   const handleCategoryChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     const category = event.target.value as string;
     setSelectedCategory(category);
@@ -108,7 +107,7 @@ export default function AllRecipesPage() {
     }
   };
 
-  // ✅ Clear Search Function
+  // Clear Search Function
   const handleClearSearch = () => {
     setSearchTerm("");
     router.push("/allrecipes"); // Reset URL
@@ -136,7 +135,7 @@ export default function AllRecipesPage() {
             </FormControl>
           </FilterContainer>
 
-          {/* ✅ Search Heading with Clear Button */}
+          {/* Search Heading with Clear Button */}
           <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
             <Typography variant="h4">
               {searchTerm ? `Showing results for "${searchTerm}"` : "Browse all recipes"}

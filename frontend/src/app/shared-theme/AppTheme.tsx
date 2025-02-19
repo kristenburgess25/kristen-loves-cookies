@@ -9,7 +9,7 @@ import { feedbackCustomizations } from './customizations/feedback';
 import { navigationCustomizations } from './customizations/navigation';
 // import { surfacesCustomizations } from './customizations/surfaces';
 import { colorSchemes, typography, shadows, shape } from './themePrimitives';
-import CssBaseline from "@mui/material/CssBaseline"; // ✅ Move here
+import CssBaseline from "@mui/material/CssBaseline";
 
 interface AppThemeProps {
   children: React.ReactNode;

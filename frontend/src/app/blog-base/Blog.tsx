@@ -5,7 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import AppTheme from '../shared-theme/AppTheme';
 import MainContent from './components/MainContent';
-import Latest from './components/Latest';
 import HeroSection from "./components/HeroSection";
 import Quote from "./components/Quote"
 

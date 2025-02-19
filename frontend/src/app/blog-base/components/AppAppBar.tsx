@@ -58,18 +58,17 @@ const handleSearchSubmit = (event: React.FormEvent) => {
   if (!searchQuery.trim()) return;
 
   if (pathname === "/allrecipes") {
-    // ✅ Update search query in URL (without refresh)
+    // Update search query in URL (without refresh)
     const url = new URL(window.location.href);
     url.searchParams.set("search", searchQuery);
     window.history.pushState({}, "", url.toString());
     window.dispatchEvent(new Event("searchUpdated")); // 🔥 Fire event manually
   } else {
-    // ✅ Redirect to `/allrecipes` with search query
+    // Redirect to `/allrecipes` with search query
     router.push(`/allrecipes?search=${encodeURIComponent(searchQuery)}`);
     window.dispatchEvent(new Event("searchUpdated")); // 🔥 Ensure it updates immediately
   }
 };
-
 
   return (
     <AppBar
