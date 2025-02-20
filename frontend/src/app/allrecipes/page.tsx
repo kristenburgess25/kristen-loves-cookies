@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { styled } from "@mui/material/styles";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
+import recipesMock from "@/data/recipes.json";
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
 interface Recipe {
@@ -53,14 +53,21 @@ console.log("First Recipe:", recipesMock[0]);
 
 
   // Fetch recipes on mount
-   // Transform the data to match the expected Recipe interface
+  // below is for use with mockData on prod until gcloud issues resolved
 useEffect(() => {
   setRecipes(recipesMock);
   setFilteredRecipes(recipesMock);
-  setLoading(false); // ✅ Ensure loading state is turned of
+  // Extract unique categories
+  const uniqueCategories = [
+    ...new Set(recipesMock.map((recipe) => recipe.category)),
+  ];
+  setCategories(uniqueCategories);
+
+  setLoading(false);
+  setLoading(false); // Ensure loading state is turned off
 }, []);
 
-
+ // when using external DB
   // React.useEffect(() => {
   //  if (recipesMock?.length) {
   //    console.log('recipes mock in use effect IF', recipesMock)
