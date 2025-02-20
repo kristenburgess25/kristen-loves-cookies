@@ -12,16 +12,17 @@ import MenuItem from "@mui/material/MenuItem";
 import { styled } from "@mui/material/styles";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import recipesMock from "@/data/recipes.json" assert { type: "json" };
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
 interface Recipe {
-  id: string;
+   id: string;
   title: string;
   subtitle: string;
   category: string;
-  tags: string[];
-  hero: string;
+  tags?: string[]; // Optional if it's missing in JSON
+  hero_image: string; // ✅ Matches the actual JSON field
 }
 
 const FilterContainer = styled(Box)({
@@ -45,31 +46,56 @@ export default function AllRecipesPage() {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState(searchParams.get("search") || "");
 
-  // Fetch recipes on mount
-  React.useEffect(() => {
-    fetch(`${API_URL}/recipes`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data.error) {
-          setRecipes(data);
-          setFilteredRecipes(data);
+  console.log("Mock Data Type:", typeof recipesMock);
+console.log("First Recipe:", recipesMock[0]);
 
-          // Get unique categories
-          const uniqueCategories = [
-            ...new Set(data.map((recipe: Recipe) => recipe.category)),
-          ];
-          setCategories(uniqueCategories);
-        } else {
-          setError("Failed to fetch recipes.");
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching recipes:", err);
-        setError("An error occurred.");
-        setLoading(false);
-      });
-  }, []);
+  console.log("Mock Data:", recipesMock);
+  console.log("Mock Data:", Array.isArray(recipesMock) ? "Array Loaded" : "Not an Array", recipesMock);
+
+
+  // Fetch recipes on mount
+   // Transform the data to match the expected Recipe interface
+useEffect(() => {
+  setRecipes(recipesMock);
+  setFilteredRecipes(recipesMock);
+  setLoading(false); // ✅ Ensure loading state is turned of
+}, []);
+
+
+  // React.useEffect(() => {
+  //  if (recipesMock?.length) {
+  //    console.log('recipes mock in use effect IF', recipesMock)
+  //   setRecipes([...recipesMock]); // Force React to detect changes
+  //   setFilteredRecipes([...recipesMock]);
+  // }
+  //   // if (process.env.NODE_ENV === "production") {
+  //   //   setRecipes(recipesMock);
+  //   //   setFilteredRecipes(recipesMock);
+  //   // }
+  //   // else
+  //   //   fetch(`${API_URL}/recipes`)
+  //   //   .then((res) => res.json())
+  //   //   .then((data) => {
+  //   //     if (!data.error) {
+  //   //       setRecipes(data);
+  //   //       setFilteredRecipes(data);
+  //   //
+  //   //       // Get unique categories
+  //   //       const uniqueCategories = [
+  //   //         ...new Set(data.map((recipe: Recipe) => recipe.category)),
+  //   //       ];
+  //   //       setCategories(uniqueCategories);
+  //   //     } else {
+  //   //       setError("Failed to fetch recipes.");
+  //   //     }
+  //   //     setLoading(false);
+  //   //   })
+  //   //   .catch((err) => {
+  //   //     console.error("Error fetching recipes:", err);
+  //   //     setError("An error occurred.");
+  //   //     setLoading(false);
+  //   //   });
+  // }, []);
 
   // Update search term when URL query changes
   useEffect(() => {
