@@ -2,6 +2,9 @@ import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 
+const glowLight = "0px 0px 8px rgba(255, 165, 0, 0.5)"; // Warm glow for light mode
+const glowDark = "0px 0px 12px rgba(255, 223, 186, 0.3)"; // Soft buttery glow for dark mode
+
 const HeroContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   width: "100%",
@@ -13,6 +16,7 @@ const HeroContainer = styled(Box)(({ theme }) => ({
   color: theme.palette.text.primary, // Automatically use theme text color
   overflow: "hidden",
   borderRadius: theme.shape.borderRadius,
+  textShadow: theme.palette.mode === "dark" ? glowDark : glowLight
 }));
 
 const HeroImage = styled(Box)(({ theme }) => ({
@@ -42,6 +46,7 @@ const HeroContent = styled(Container)({
   position: "relative",
   zIndex: 2, // Ensure text is above overlay
 });
+
 
 export default function HeroSection() {
   return (

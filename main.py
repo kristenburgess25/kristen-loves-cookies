@@ -30,9 +30,13 @@ def get_db():
     finally:
         db.close()
 
-# 📌 API: Get All Recipes
+@app.get("/")
+def read_root():
+    return {"message": "Hello from FastAPI on Cloud Run!"}
+
+# API: Get All Recipes
 @app.get("/recipes")
-# 📌 API: Get All Recipes (Now Includes Category Name)
+# API: Get All Recipes (Now Includes Category Name)
 def get_recipes(db: Session = Depends(get_db)):
     recipes = db.execute(select(Recipe).options(joinedload(Recipe.category))).scalars().all()
 
@@ -45,7 +49,7 @@ def get_recipes(db: Session = Depends(get_db)):
         for recipe in recipes
     ]
 
-# 📌 API: Get Recipe by ID
+# API: Get Recipe by ID
 @app.get("/recipes/{recipe_id}")
 def get_recipe_by_id(recipe_id: str, db: Session = Depends(get_db)):
     recipe = db.execute(select(Recipe).where(Recipe.id == recipe_id)).scalar_one_or_none()
@@ -54,7 +58,7 @@ def get_recipe_by_id(recipe_id: str, db: Session = Depends(get_db)):
     return recipe
 
 
-# 📌 API: Get Recipes by Category
+# API: Get Recipes by Category
 @app.get("/recipes/category/{category_name}")
 def get_recipes_by_category(category_name: str, db: Session = Depends(get_db)):
     result = (
@@ -64,7 +68,7 @@ def get_recipes_by_category(category_name: str, db: Session = Depends(get_db)):
     )
     return result
 
-# 📌 API: Get Recipes by Tag
+# API: Get Recipes by Tag
 @app.get("/recipes/tag/{tag_name}")
 def get_recipes_by_tag(tag_name: str, db: Session = Depends(get_db)):
     result = (
@@ -74,7 +78,7 @@ def get_recipes_by_tag(tag_name: str, db: Session = Depends(get_db)):
     )
     return result
 
-# 📌 API: Search Recipes by Title/Subtitle/Introduction
+# API: Search Recipes by Title/Subtitle/Introduction
 @app.get("/recipes/search/{query}")
 def search_recipes(query: str, db: Session = Depends(get_db)):
     result = (
@@ -91,8 +95,21 @@ def search_recipes(query: str, db: Session = Depends(get_db)):
     )
     return result
 
+
 # Ensure the app binds to the correct port
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8080))  # Cloud Run requires PORT=8080
-    print(f"🚀 Starting FastAPI on port {port}...")
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    host = "0.0.0.0"  # Ensure it listens on all interfaces
+
+    print(f"🚀 Starting FastAPI on {host}:{port}...")
+    import sys
+    print(f"🔍 Python version: {sys.version}")
+    print(f"🛠️ Environment Variables: {os.environ}")
+
+    uvicorn.run("main:app", host=host, port=port, reload=False)
+
+    # if __name__ == "__main__":
+    #     port = int(os.getenv("PORT", 8080))  # Cloud Run requires PORT=8080
+    #     print(f"🚀 Starting FastAPI on host 0.0.0.0 and port {port}...")
+    #     uvicorn.run(app, host="0.0.0.0", port=port, log_level="debug")
+
