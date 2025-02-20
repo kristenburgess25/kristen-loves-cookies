@@ -12,7 +12,6 @@ import MenuItem from "@mui/material/MenuItem";
 import { styled } from "@mui/material/styles";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import recipesMock from "@/data/recipes.json" assert { type: "json" };
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 

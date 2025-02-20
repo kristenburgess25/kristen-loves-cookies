@@ -7,6 +7,7 @@ import Chip from "@mui/material/Chip";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
 
 const StyledCard = styled(Card)(({ theme }) => ({
   display: "flex",
@@ -45,7 +46,7 @@ interface Recipe {
   subtitle: string;
   category: string;
   tags: string[];
-  hero: string;
+  hero_image: string;
 }
 
 interface RecipeCardProps {
@@ -56,20 +57,16 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   return (
     <Link href={`/recipe/${recipe.id}`} underline="none">
       <StyledCard variant="outlined">
-        <CardMedia
-          component="img"
-          alt={recipe.title}
-          image={`/assets/articles/${recipe.hero_image}` || "/placeholder-image.jpg"}
-          sx={{
-            width: "100%", // Make sure it doesn't exceed the card width
-            height: "auto", // Maintain aspect ratio
-            minHeight: 200,
-            maxHeight: 200, // Prevents images from being too large
-            borderBottom: "1px solid",
-            borderColor: "divider",
-            objectFit: "cover", // Ensures the image fits well
-          }}
-        />
+        {/*below replaces CardMedia, uses next/image */}
+        <Box sx={{ position: "relative", width: "100%", height: 200 }}>
+          <Image
+            src={`/assets/articles/${recipe.hero_image}`}
+            alt={recipe.title}
+            fill //Automatically scales the image to fit the container
+            style={{ objectFit: "cover", borderRadius: "8px" }}
+            priority //Ensures above-the-fold images load quickly
+          />
+        </Box>
         <StyledCardContent>
           <Typography gutterBottom variant="caption" component="div">
             {recipe.category}

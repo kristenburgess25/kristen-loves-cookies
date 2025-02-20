@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Link from "@mui/material/Link";
 import { styled, useTheme } from "@mui/material/styles";
+import Image from "next/image";
 
 const StyledCard = styled(Card)(({ theme }) => ({
   position: "relative",
@@ -59,17 +60,16 @@ const RecipeCardTile: React.FC<RecipeCardProps> = ({ recipe }) => {
   return (
     <Link href={`/recipe/${recipe.id}`} underline="none">
       <StyledCard>
-        {/* Recipe Image */}
-        <CardMedia
-          component="img"
-          alt={recipe.title}
-          image={`/assets/articles/${recipe.hero_image}` || "/placeholder-image.jpg"}
-          sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
-        />
+        {/*below replaces CardMedia, uses next/image */}
+        <Box sx={{ position: "relative", width: "100%", height: "100%" }}>
+          <Image
+            src={`/assets/articles/${recipe.hero_image}`}
+            alt={recipe.title}
+            fill //Automatically scales the image to fit the container
+            style={{ objectFit: "cover", borderRadius: "8px" }}
+            priority //Ensures above-the-fold images load quickly
+          />
+        </Box>
 
         {/* Overlay (Appears on Hover / Always visible on mobile) */}
         <Overlay
