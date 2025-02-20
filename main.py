@@ -97,16 +97,21 @@ def search_recipes(query: str, db: Session = Depends(get_db)):
 
 
 # Ensure the app binds to the correct port
+# if __name__ == "__main__":
+#     port = int(os.getenv("PORT", 8080))  # Cloud Run requires PORT=8080
+#     host = "0.0.0.0"  # Ensure it listens on all interfaces
+#
+#     print(f"🚀 Starting FastAPI on {host}:{port}...")
+#     import sys
+#     print(f"🔍 Python version: {sys.version}")
+#     print(f"🛠️ Environment Variables: {os.environ}")
+#
+#     uvicorn.run("main:app", host=host, port=port, reload=False)
+
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8080))  # Cloud Run requires PORT=8080
-    host = "0.0.0.0"  # Ensure it listens on all interfaces
-
-    print(f"🚀 Starting FastAPI on {host}:{port}...")
-    import sys
-    print(f"🔍 Python version: {sys.version}")
-    print(f"🛠️ Environment Variables: {os.environ}")
-
-    uvicorn.run("main:app", host=host, port=port, reload=False)
+    print(f"🚀 Starting FastAPI on port {port}...")
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
     # if __name__ == "__main__":
     #     port = int(os.getenv("PORT", 8080))  # Cloud Run requires PORT=8080

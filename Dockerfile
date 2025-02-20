@@ -19,25 +19,26 @@
 #CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
 
 # Setup for Vercel
-# Use Python base image
+# Use official Python image
 FROM python:3.11
 
-# Set environment variables
-ENV PORT=8080
-ENV PYTHONUNBUFFERED=1
-
-# Set working directory
+# Set the working directory
 WORKDIR /app
 
-# Copy application files
-COPY . .
+# Copy only the required files to avoid caching issues
+COPY requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the correct port
+# Copy the rest of the application code
+COPY . .
+
+# Expose port 8080 (Vercel requires this)
+ENV PORT=8080
 EXPOSE 8080
 
-# Start FastAPI with Uvicorn
+# Command to start FastAPI using Uvicorn
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+
 

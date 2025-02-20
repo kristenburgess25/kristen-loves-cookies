@@ -6,19 +6,29 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Use different DATABASE_URLs for dev and prod
-ENV = os.getenv("ENVIRONMENT", "dev")  # Default to development
-if ENV == "prod":
-    SQLALCHEMY_DATABASE_URL = os.getenv("PROD_DATABASE_URL")
-else:
-    SQLALCHEMY_DATABASE_URL = os.getenv("DEV_DATABASE_URL")
+# 🔥 Debug: Print all environment variables (for testing inside the container)
+print("DEBUG: All env vars ->", os.environ)
+
+# Use DATABASE_URL if available - should allow for explicitly setting database_url from CLI
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+# If DATABASE_URL is None, fall back to DEV/PROD logic
+if not DATABASE_URL:
+    ENV = os.getenv("ENVIRONMENT", "dev")  # Default to development
+    if ENV == "prod":
+        DATABASE_URL = os.getenv("PROD_DATABASE_URL")
+    else:
+        DATABASE_URL = os.getenv("DEV_DATABASE_URL")
+
+# 🔥 Debug: Print the database URL before using it
+print(f"DEBUG: DATABASE_URL resolved as -> {DATABASE_URL}")
 
 # Ensure the database URL is not None
-if not SQLALCHEMY_DATABASE_URL:
+if not DATABASE_URL:
     raise ValueError("DATABASE_URL is not set. Check your .env file.")
 
 # Create database engine
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+engine = create_engine(DATABASE_URL)
 
 # Create session factory
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
