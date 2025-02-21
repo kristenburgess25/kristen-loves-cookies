@@ -18,22 +18,23 @@ const QuoteContainer = styled(Box)(({ theme }) => ({
 }));
 
 const QuoteText = styled(Typography)(({ theme }) => ({
-  fontFamily: "'Cookie', serif",
-  fontSize: "2.5rem", // Default size for desktop
-  fontWeight: 700,
+  // fontFamily: "'Cookie', serif",
+  fontSize: "1.5rem", // Default size for desktop
+  fontWeight: 600,
   lineHeight: 1.3,
   [theme.breakpoints.down("sm")]: {
-    fontSize: "2rem", // 🔥 Smaller font for mobile
+    fontSize: "1rem", // 🔥 Smaller font for mobile
   },
 }));
 
 const QuoteAuthor = styled(Typography)(({ theme }) => ({
-  fontSize: "1.25rem", // Default
+  fontFamily: "'Cookie', serif",
+  fontSize: "2rem", // Default
   fontWeight: 500,
   marginTop: "1rem",
   // color: theme.palette.text.secondary,
   [theme.breakpoints.down("sm")]: {
-    fontSize: "1rem", // 🔥 Slightly smaller on mobile
+    fontSize: "1.5rem", // 🔥 Slightly smaller on mobile
   },
 }));
 

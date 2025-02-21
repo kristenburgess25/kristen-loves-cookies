@@ -19,7 +19,7 @@ export default function Blog(props: BlogParams) {
   const { disableCustomTheme, recipes } = props;
 
   const Quote1 = {
-    quote: "I think baking cookies is equal to Queen Victoria running an empire. There&apos;s no difference in how seriously you take the job, how seriously you approach your whole life.",
+    quote: "I think baking cookies is equal to Queen Victoria running an empire. There's no difference in how seriously you take the job, how seriously you approach your whole life.",
     author: "Martha Stewart"
   };
 
