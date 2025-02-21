@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
 const glowLight = "0px 0px 8px rgba(255, 165, 0, 0.5)"; // Warm glow for light mode
 const glowDark = "0px 0px 12px rgba(255, 223, 186, 0.3)"; // Soft buttery glow for dark mode

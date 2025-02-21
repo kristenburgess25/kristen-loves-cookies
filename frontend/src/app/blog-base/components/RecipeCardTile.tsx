@@ -1,12 +1,13 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Link from "@mui/material/Link";
 import { styled, useTheme } from "@mui/material/styles";
 import Image from "next/image";
+import Recipe from "@/types/Recipe";
+
 
 const StyledCard = styled(Card)(({ theme }) => ({
   position: "relative",
@@ -34,15 +35,6 @@ const Overlay = styled(Box)(({ theme }) => ({
     opacity: 1, // Always visible on mobile
   },
 }));
-
-interface Recipe {
-  id: string;
-  title: string;
-  subtitle: string;
-  category: string;
-  tags: string[];
-  hero_image: string;
-}
 
 interface RecipeCardProps {
   recipe: Recipe;

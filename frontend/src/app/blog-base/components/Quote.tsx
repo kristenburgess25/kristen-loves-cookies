@@ -45,8 +45,8 @@ interface QuoteProps {
 const Quote: React.FC<QuoteProps> = ({ quote, author }) => {
   return (
     <QuoteContainer>
-      <QuoteText color="primary">"{quote}"</QuoteText>
-      <QuoteAuthor color="secondary">— {author}</QuoteAuthor>
+      <QuoteText color="primary">&ldquo;{quote}&rdquo;</QuoteText>
+      <QuoteAuthor color="secondary">&mdash; {author}</QuoteAuthor>
     </QuoteContainer>
   );
 };

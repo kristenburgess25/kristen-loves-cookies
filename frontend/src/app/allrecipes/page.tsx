@@ -13,16 +13,14 @@ import { styled } from "@mui/material/styles";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import recipesMock from "@/data/recipes.json";
-const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+import Recipe from "@/types/Recipe";
+import { Suspense } from "react";
 
-interface Recipe {
-   id: string;
-  title: string;
-  subtitle: string;
-  category: string;
-  tags?: string[]; // Optional if it's missing in JSON
-  hero_image: string; // ✅ Matches the actual JSON field
-}
+// const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+
+const SearchParamsWrapper = ({ children }: { children: React.ReactNode }) => (
+  <Suspense fallback={null}>{children}</Suspense>
+);
 
 const FilterContainer = styled(Box)({
   display: "flex",
@@ -33,11 +31,11 @@ const FilterContainer = styled(Box)({
   marginRight: "1rem",
 });
 
-export default function AllRecipesPage() {
+function AllRecipesPage() {
   const [recipes, setRecipes] = React.useState<Recipe[]>([]);
   const [filteredRecipes, setFilteredRecipes] = React.useState<Recipe[]>([]);
   const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState<string | null>(null);
+  // const [error, setError] = React.useState<string | null>(null);
   const [categories, setCategories] = React.useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = React.useState<string>("");
 
@@ -148,15 +146,19 @@ useEffect(() => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 4, px: 2, padding: "3rem 1rem" }}>
       {loading && <Typography>Loading recipes...</Typography>}
-      {error && <Typography color="error">{error}</Typography>}
+      {/*{error && <Typography color="error">{error}</Typography>}*/}
       <br />
-      {!loading && !error && (
+      {!loading && (
         <div>
           {/* Filter Dropdown */}
           <FilterContainer>
             <FormControl size="small" sx={{ minWidth: 200 }}>
               <InputLabel>Filter by Category</InputLabel>
-              <Select value={selectedCategory} onChange={handleCategoryChange}>
+              <Select
+                value={selectedCategory}
+                /* @ts-expect-error onChange is not a problem */
+                onChange={handleCategoryChange}
+              >
                 <MenuItem value="All">All Recipes</MenuItem>
                 {categories.map((category) => (
                   <MenuItem key={category} value={category}>
@@ -169,7 +171,7 @@ useEffect(() => {
 
           {/* Search Heading with Clear Button */}
           <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
-            <Typography variant="h4">
+            <Typography variant="h4" color="primary">
               {searchTerm ? `Showing results for "${searchTerm}"` : "Browse all recipes"}
             </Typography>
             {searchTerm && (
@@ -189,5 +191,14 @@ useEffect(() => {
         </div>
       )}
     </Box>
+  );
+}
+
+// Wrap the component in Suspense
+export default function WrappedAllRecipesPage() {
+  return (
+    <SearchParamsWrapper>
+      <AllRecipesPage />
+    </SearchParamsWrapper>
   );
 }

@@ -5,8 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Chip from "@mui/material/Chip";
 import Link from "@mui/material/Link";
-import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
+import Recipe from "@/types/Recipe";
 
 const StyledCard = styled(Card)(({ theme }) => ({
   display: "flex",
@@ -31,24 +31,6 @@ const StyledCardContent = styled(CardContent)({
     paddingBottom: 16,
   },
 });
-
-const StyledTypography = styled(Typography)({
-  display: "-webkit-box",
-  WebkitBoxOrient: "vertical",
-  WebkitLineClamp: 2,
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-});
-
-interface Recipe {
-  id: string;
-  title: string;
-  subtitle: string;
-  category: string;
-  tags: string[];
-  hero: string;
-  ingredients: string[];
-}
 
 interface RecipeCardProps {
   recipe: Recipe;

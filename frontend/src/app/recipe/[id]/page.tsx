@@ -149,6 +149,7 @@ export default function RecipePage() {
   }, [id]);
 
   if (loading) return <Typography>Loading...</Typography>;
+  if (error) return <Typography>Recipe not found!</Typography>;
   if (!recipe) return <Typography>Recipe not found!</Typography>;
 
   return (
