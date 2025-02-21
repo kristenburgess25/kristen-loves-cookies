@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kristen Loves Cookies",
   description: "Delicious recipes & baked goods!",
+    icons: {
+    icon: "/icons8-cookie-32.png",
+  },
 };
 
 export default function RootLayout({
